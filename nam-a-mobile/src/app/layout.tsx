@@ -1,17 +1,20 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Roboto, Raleway } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import Breadcrumbs from "@/components/layout/Breadcrumbs";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const roboto = Roboto({
+  variable: "--font-roboto",
   subsets: ["latin"],
+  weight: ["400", "700"], // Adjust weights as needed
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const raleway = Raleway({
+  variable: "--font-raleway",
   subsets: ["latin"],
+  weight: ["400", "700"], // Adjust weights as needed
 });
 
 export const metadata: Metadata = {
@@ -27,13 +30,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${raleway.variable} ${roboto.variable} antialiased`}
       >
-        <Header/>
+        <Header />
         <main className="min-h-screen">
+          <div className='pt-[44px] container mx-auto'> <Breadcrumbs /></div>
+
+
           {children}
         </main>
-        <Footer/>
+        <Footer />
       </body>
     </html>
   );

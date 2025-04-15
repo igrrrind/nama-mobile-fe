@@ -1,143 +1,38 @@
 // import { productService } from '@/lib/api/services/product.service';
-import Image from 'next/image';
-import Link from 'next/link';
-import { Phone, Laptop, Watch, Headphones, Wrench } from 'lucide-react';
+import { Wrench } from 'lucide-react';
+import { Submenu } from '@/components/home/Submenu';
+import { ServiceSection } from '@/components/home/ServicesSection';
+import { mockItems, extraItems1, extraItems2 } from '@/constants/data';
+import ItemCardWrapper from '@/components/shared/ItemCardWrapper';
 
-const services = [
-  {
-    icon: Phone,
-    title: 'Sửa chữa iPhone',
-    description: 'Thay màn hình, pin, camera chính hãng',
-    link: '/dich-vu/sua-iphone'
-  },
-  {
-    icon: Laptop,
-    title: 'Sửa chữa Laptop',
-    description: 'Sửa chữa, nâng cấp, vệ sinh laptop',
-    link: '/dich-vu/sua-laptop'
-  },
-  {
-    icon: Watch,
-    title: 'Sửa Apple Watch',
-    description: 'Thay màn hình, pin Apple Watch',
-    link: '/dich-vu/sua-apple-watch'
-  },
-  {
-    icon: Headphones,
-    title: 'Sửa Airpods',
-    description: 'Sửa chữa tai nghe Apple chính hãng',
-    link: '/dich-vu/sua-airpods'
-  }
-];
-
-const featuredProducts = [
-  {
-    id: 1,
-    name: 'iPhone 14 Pro Max',
-    price: 27900000,
-    image: '/products/iphone-14-pro-max.jpg',
-    description: '128GB, Màu đen, Chính hãng VN/A'
-  },
-  {
-    id: 2,
-    name: 'MacBook Air M2',
-    price: 28900000,
-    image: '/products/macbook-air-m2.jpg',
-    description: '256GB SSD, 8GB RAM, Space Gray'
-  }
-];
+const featuredProducts = mockItems
 
 export default function Home() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-primary/5 py-12">
+      <section className="bg-primary/5 py-6">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <div>
-              <h1 className="text-4xl font-bold mb-4">
-                Sửa chữa điện thoại chuyên nghiệp tại Nam Á Mobile
-              </h1>
-              <p className="text-lg text-gray-600 mb-6">
-                Dịch vụ sửa chữa uy tín với đội ngũ kỹ thuật viên giàu kinh nghiệm
-              </p>
-              <Link
-                href="/dat-lich"
-                className="bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors"
-              >
-                Đặt lịch ngay
-              </Link>
-            </div>
-            <div className="relative h-[400px]">
-              <Image
-                src="/hero-image.jpg"
-                alt="Nam Á Mobile Service"
-                fill
-                className="object-cover rounded-lg"
-              />
+          <Submenu/>
+          <div className="container mx-auto px-4">
+            <div className="ml-72 grid md:grid-cols-3 grid-rows-2 gap-8 h-[400px] py-4">
+              <div className="col-span-2 row-span-2 bg-gray-200 rounded-2xl"></div>
+              <div className="bg-gray-200 rounded-2xl"></div>
+              <div className="bg-gray-200 rounded-2xl"></div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Services Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Dịch vụ của chúng tôi</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {services.map((service) => (
-              <Link
-                key={service.title}
-                href={service.link}
-                className="group p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow"
-              >
-                <service.icon className="w-12 h-12 text-primary mb-4" />
-                <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-                <p className="text-gray-600">{service.description}</p>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ServiceSection />
 
       {/* Featured Products */}
-      <section className="bg-gray-50 py-16">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Sản phẩm nổi bật</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {featuredProducts.map((product) => (
-              <div
-                key={product.id}
-                className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow"
-              >
-                <div className="relative h-48">
-                  <Image
-                    src={product.image}
-                    alt={product.name}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="p-4">
-                  <h3 className="font-semibold text-lg mb-2">{product.name}</h3>
-                  <p className="text-gray-600 text-sm mb-2">{product.description}</p>
-                  <div className="flex justify-between items-center">
-                    <span className="text-lg font-bold text-primary">
-                      {new Intl.NumberFormat('vi-VN', {
-                        style: 'currency',
-                        currency: 'VND'
-                      }).format(product.price)}
-                    </span>
-                    <button className="bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors">
-                      Chi tiết
-                    </button>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ItemCardWrapper items={featuredProducts} sectionTitle='Dịch vụ sửa chữa phổ biến' gradientColor='#004de0'/>
+
+      {/* More ItemCardWrapper Sections */}
+      <ItemCardWrapper items={extraItems1} sectionTitle='Phụ kiện nổi bật' gradientColor='#00b894'/>
+      <ItemCardWrapper items={extraItems2} sectionTitle='Combo ưu đãi' gradientColor='#fdcb6e'/>
 
       {/* Why Choose Us */}
       <section className="py-16">
@@ -166,6 +61,56 @@ export default function Home() {
               <p className="text-gray-600">
                 Báo giá minh bạch, cạnh tranh, không phát sinh
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* New Section: Quy trình sửa chữa */}
+      <section className="py-16 bg-primary/10">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-12">Quy trình sửa chữa</h2>
+          <div className="grid md:grid-cols-4 gap-8 text-center">
+            <div>
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/20 flex items-center justify-center text-primary text-2xl font-bold">1</div>
+              <h4 className="font-semibold mb-2">Tiếp nhận thiết bị</h4>
+              <p className="text-gray-600">Nhận máy, kiểm tra lỗi và tư vấn giải pháp phù hợp.</p>
+            </div>
+            <div>
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/20 flex items-center justify-center text-primary text-2xl font-bold">2</div>
+              <h4 className="font-semibold mb-2">Báo giá & xác nhận</h4>
+              <p className="text-gray-600">Báo giá minh bạch, khách hàng xác nhận trước khi sửa.</p>
+            </div>
+            <div>
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/20 flex items-center justify-center text-primary text-2xl font-bold">3</div>
+              <h4 className="font-semibold mb-2">Tiến hành sửa chữa</h4>
+              <p className="text-gray-600">Kỹ thuật viên thực hiện sửa chữa nhanh chóng, chuyên nghiệp.</p>
+            </div>
+            <div>
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/20 flex items-center justify-center text-primary text-2xl font-bold">4</div>
+              <h4 className="font-semibold mb-2">Bàn giao & bảo hành</h4>
+              <p className="text-gray-600">Kiểm tra lại máy, bàn giao và hướng dẫn bảo hành.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* New Section: Đánh giá khách hàng */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-12">Khách hàng nói gì về Nam Á Mobile?</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-white rounded-xl shadow p-6">
+              <p className="italic text-gray-700 mb-4">"Dịch vụ rất chuyên nghiệp, sửa máy nhanh và giá hợp lý. Sẽ giới thiệu cho bạn bè!"</p>
+              <div className="font-semibold text-primary">Nguyễn Văn A</div>
+            </div>
+            <div className="bg-white rounded-xl shadow p-6">
+              <p className="italic text-gray-700 mb-4">"Nhân viên tư vấn nhiệt tình, linh kiện chính hãng, rất yên tâm khi sửa chữa tại đây."</p>
+              <div className="font-semibold text-primary">Trần Thị B</div>
+            </div>
+            <div className="bg-white rounded-xl shadow p-6">
+              <p className="italic text-gray-700 mb-4">"Bảo hành rõ ràng, hỗ trợ sau sửa chữa tốt. Sẽ quay lại khi cần!"</p>
+              <div className="font-semibold text-primary">Lê Văn C</div>
             </div>
           </div>
         </div>

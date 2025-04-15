@@ -1,10 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { Search, MapPin, ShoppingCart, Calendar } from 'lucide-react';
+import { Search, MapPin, ShoppingCart, Calendar, Smartphone, Shield } from 'lucide-react';
 import { MegaMenuClient, type CategoryType } from './MegaMenu/MegaMenuClient';
 import { Input } from '../ui/input';
 
-const categories: CategoryType[] = [
+export const categories: CategoryType[] = [
   {
     title: 'Sửa Điện Thoại',
     items: [
@@ -64,13 +64,12 @@ export default function Header() {
           </div>
         </div>
       </div> */}
-
-      <header className="bg-primary text-white py-3 ">
+      <header className="bg-primary text-white py-2 fixed w-screen z-50">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-[80px]">
             {/* Logo */}
-            <Link href="/" className="flex-shrink-0">
-              <Image src="/logo-text.svg" alt="Logo" width={200} height={100} />
+            <Link href="/" className="flex-shrink-0 mr-4 mt-2">
+              <Image src="/logo-text.svg" alt="Logo" width={130} height={80} />
             </Link>
 
             {/* Mega Menu */}
@@ -80,13 +79,13 @@ export default function Header() {
             <div className="flex-1 max-w-2xl mx-4">
               <div className="relative">
                 <button className="absolute  top-1/2 -translate-y-1/2 left-3">
-                  <Search className="w-7 h-7 text-gray-500" />
+                  <Search className="w-6 h-6 text-gray-500" />
                 </button>
                 <Input
                   type="text"
-                  placeholder="Tìm kiếm dịch vụ sửa chữa..."
+                  placeholder="Tìm kiếm dịch vụ sửa chữa & điện thoại cũ..."
                   style={{paddingLeft: '40px'}}
-                  className="w-full pl-12 pr-4 py-6 text-lg rounded-full text-gray-900 placeholder-gray-500 bg-white focus:outline-none focus:ring-2 focus:ring-primary"
+                  className="w-full pl-12 pr-4 py-5 text-lg rounded-full text-gray-900 placeholder-gray-500 bg-white focus:outline-none focus:ring-2 focus:ring-primary"
                 />
               </div>
             </div>
@@ -94,24 +93,24 @@ export default function Header() {
 
             {/* Icons */}
             <div className="flex items-center space-x-6">
-              <Link href="/dat-lich" className="flex items-center space-x-2 p-2 rounded-full hover:bg-primary-dark transition-colors">
+              <Link href="/dat-lich" className="flex items-center space-x-2 p-2 px-3 rounded-full hover:bg-primary-dark transition-colors">
                 <Calendar className="w-5 h-5" />
                 <span>Đặt lịch</span>
               </Link>
               
-              <Link href="/tra-cuu" className="flex items-center space-x-2 p-2 rounded-full hover:bg-primary-dark transition-colors">
+              <Link href="/tra-cuu" className="flex items-center space-x-2 p-2 px-3 rounded-full hover:bg-primary-dark transition-colors">
                 <Search className="w-5 h-5" />
                 <span>Tra cứu</span>
               </Link>
               
               <Link href="/cua-hang">
-                <div className="flex items-center space-x-2 p-3 rounded-full bg-blue-500 transition-colors">
+                <div className="flex items-center space-x-2 p-2 px-3 rounded-full hover:bg-primary-dark transition-colors">
                   <MapPin className="w-5 h-5" />
                   <span>Cửa hàng</span>
                 </div>
               </Link>
               
-              <Link href="/gio-hang" className="flex items-center space-x-2 p-2 rounded-full hover:bg-[#1c5ad4] transition-colors">
+              <Link href="/gio-hang" className="flex items-center space-x-2 p-2 rounded-full hover:bg-primary-dark transition-colors">
                 <div className="relative">
                   <ShoppingCart className="w-5 h-5" />
                   <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">
@@ -123,7 +122,35 @@ export default function Header() {
           </div>
         </div>
       </header>
+      <div className='w-full bg-white border-gray-200 border-2 flex justify-center space-x-8 py-3 items-center'>
+        {subHeaderItems.map( (i) =>  (
+          <div key = {i.title} className='flex'>{i.icon}<span className='text-black'>{i.title}</span> </div>
+        )
+        )}
+        
+
+      </div>
     </>
   );
 }
+
+
+const subHeaderItems = [
+  {
+    title: "HÀNG MỚI VỀ",
+    icon: <Smartphone className='w-6 h-6' fill='black' stroke='white'/>
+  },
+  {
+    title: "BLOG CẨM NANG",
+    icon: <Smartphone className='w-6 h-6' fill='black'/>
+  },
+  {
+    title: "CHÍNH SÁCH BẢO HÀNH",
+    icon: <Shield className='w-6 h-6' fill='black' stroke='white'/>
+  },
+  {
+    title: "BẢNG GIÁ DỊCH VỤ",
+    icon: <Smartphone className='w-6 h-6' fill='black'/>
+  },
+]
 
