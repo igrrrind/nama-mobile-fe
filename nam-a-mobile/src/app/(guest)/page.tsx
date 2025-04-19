@@ -101,15 +101,15 @@ export default function Home() {
           <h2 className="text-3xl font-bold text-center mb-12">Khách hàng nói gì về Nam Á Mobile?</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white rounded-xl shadow p-6">
-              <p className="italic text-gray-700 mb-4">"Dịch vụ rất chuyên nghiệp, sửa máy nhanh và giá hợp lý. Sẽ giới thiệu cho bạn bè!"</p>
+              <p className="italic text-gray-700 mb-4">&quot;Dịch vụ rất chuyên nghiệp, sửa máy nhanh và giá hợp lý. Sẽ giới thiệu cho bạn bè!&quot;</p>
               <div className="font-semibold text-primary">Nguyễn Văn A</div>
             </div>
             <div className="bg-white rounded-xl shadow p-6">
-              <p className="italic text-gray-700 mb-4">"Nhân viên tư vấn nhiệt tình, linh kiện chính hãng, rất yên tâm khi sửa chữa tại đây."</p>
+              <p className="italic text-gray-700 mb-4">&quot;Nhân viên tư vấn nhiệt tình, linh kiện chính hãng, rất yên tâm khi sửa chữa tại đây.&quot;</p>
               <div className="font-semibold text-primary">Trần Thị B</div>
             </div>
             <div className="bg-white rounded-xl shadow p-6">
-              <p className="italic text-gray-700 mb-4">"Bảo hành rõ ràng, hỗ trợ sau sửa chữa tốt. Sẽ quay lại khi cần!"</p>
+              <p className="italic text-gray-700 mb-4">&quot;Bảo hành rõ ràng, hỗ trợ sau sửa chữa tốt. Sẽ quay lại khi cần!&quot;</p>
               <div className="font-semibold text-primary">Lê Văn C</div>
             </div>
           </div>

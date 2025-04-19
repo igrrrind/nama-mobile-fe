@@ -5,7 +5,7 @@ import { useState } from "react";
 import { Item } from "@/types/Item";
 import { useRouter } from "next/navigation";
 
-export default function ItemCard({ item }: { item: Item }) {
+export default function ItemCard({ item, type = "dich-vu" }: { item: Item, type: "dich-vu" | "mua-sam"}) {
   const router = useRouter();
   const [imgSrc, setImgSrc] = useState(
     item.image && item.image.trim() !== "" ? item.image : "/placeholder.avif"
@@ -13,7 +13,7 @@ export default function ItemCard({ item }: { item: Item }) {
 
   const handleClick = () => {
     if (item.stock && item.stock > 0) {
-      router.push(`/${item.slug}`);
+      router.push(`/${type}/${item.slug}`);
     }
   };
 
