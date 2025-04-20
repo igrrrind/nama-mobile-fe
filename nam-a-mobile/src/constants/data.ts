@@ -2,7 +2,7 @@ import { Item } from "@/types/Item";
 
 export const mockItems: Item[] = [
   {
-    id: 1,
+    id: "1",
     slug: "thay-man-hinh-iphone-14-pro",
     image: "/images/iphone14pro-screen.jpg",
     name: "Thay màn hình iPhone 14 Pro",
@@ -12,7 +12,7 @@ export const mockItems: Item[] = [
     stock: 12,
   },
   {
-    id: 2,
+    id: "2",
     slug: "pin-iphone-xs-max",
     image: "", // Không có hình ảnh
     name: "Pin iPhone XS Max chính hãng",
@@ -22,7 +22,7 @@ export const mockItems: Item[] = [
     stock: 5,
   },
   {
-    id: 3,
+    id: "3",
     slug: "op-lung-silicon-galaxy-s23",
     image: "/images/op-silicon-s23.jpg",
     name: "Ốp lưng silicon Galaxy S23",
@@ -32,7 +32,7 @@ export const mockItems: Item[] = [
     stock: 0, // Hết hàng
   },
   {
-    id: 4,
+    id: "4",
     slug: "cap-sac-type-c-20w",
     image: "/images/cap-sac-typec.jpg",
     name: "Cáp sạc Type-C 20W nhanh",
@@ -42,7 +42,7 @@ export const mockItems: Item[] = [
     stock: 30,
   },
   {
-    id: 5,
+    id: "5",
     slug: "tai-nghe-bluetooth-chong-on",
     image: "/images/tai-nghe-chong-on.jpg",
     name: "Tai nghe Bluetooth chống ồn",
@@ -52,7 +52,7 @@ export const mockItems: Item[] = [
     stock: 0,
   },
   {
-    id: 6,
+    id: "6",
     slug: "cu-sac-nhanh-25w-samsung",
     image: "/images/cu-sac-nhanh-25w.jpg",
     name: "Củ sạc nhanh 25W Samsung",
@@ -65,7 +65,7 @@ export const mockItems: Item[] = [
 
 export const extraItems1: Item[] = [
     {
-      id: 101,
+      id: "101",
       slug: "cap-sac-nhanh-iphone",
       name: "Cáp sạc nhanh iPhone",
       price: 150000,
@@ -75,7 +75,7 @@ export const extraItems1: Item[] = [
       stock: 15
     },
     {
-      id: 102,
+      id: "102",
       slug: "op-lung-chong-soc",
       name: "Ốp lưng chống sốc",
       price: 120000,
@@ -85,7 +85,7 @@ export const extraItems1: Item[] = [
       stock: 20
     },
     {
-      id: 103,
+      id: "103",
       slug: "kinh-cuong-luc",
       name: "Kính cường lực",
       price: 80000,
@@ -98,7 +98,7 @@ export const extraItems1: Item[] = [
   
   export const extraItems2: Item[] = [
     {
-      id: 201,
+      id: "201",
       slug: "combo-thay-pin-vesinh",
       name: "Combo thay pin + vệ sinh máy",
       price: 350000,
@@ -108,7 +108,7 @@ export const extraItems1: Item[] = [
       stock: 10
     },
     {
-      id: 202,
+      id: "202",
       slug: "combo-man-hinh-dan-kinh",
       name: "Combo thay màn hình + dán kính",
       price: 1200000,

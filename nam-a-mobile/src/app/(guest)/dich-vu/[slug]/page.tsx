@@ -4,7 +4,7 @@ import { ServiceDetailClient } from '@/components/dich-vu/ServiceDetailClient';
 export default function ServiceDetailPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
   // This would normally come from an API or database
   const service = {
@@ -90,7 +90,7 @@ export default function ServiceDetailPage({
   ];
 
   return (
-    <div className="mx-auto px-4 py-4 bg-gradient-to-br from-primary/10 to-primary/5">
+    <div className="mx-auto px-4 pt-4 pb-20 bg-gradient-to-br from-primary/10 to-primary/5">
       <div className="container mx-auto max-w-7xl">
         <Breadcrumb items={breadcrumbItems} />
         <ServiceDetailClient service={service} />

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -20,7 +21,7 @@ export const ServiceSection = ({ services = servicesFallback }: { services?: Ser
                   className="group p-4 flex rounded-2xl text-center items-center transition-all bg-white shadow-md hover:shadow-lg hover:-translate-y-1 duration-300"
                 >
                   <div className="w-20 h-20 mb-4 bg-blue-100 rounded-2xl flex items-center justify-center">
-                    <img src={service.iconUrl} alt={service.title} className="w-16 h-16 object-contain" />
+                    <Image src={service.iconUrl} alt={service.title} width={64} height={64} className="w-16 h-16 object-contain" />
                   </div>
                   <div className="ml-4 flex-1">
                     <h3 className="text-lg font-semibold mb-2 text-left text-gray-800">{service.title}</h3>

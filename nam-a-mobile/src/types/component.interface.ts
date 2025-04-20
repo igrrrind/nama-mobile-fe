@@ -1,11 +1,12 @@
 import { Model } from './model.interface';
 import { ComponentCategory } from './component-category.interface';
 import { ServiceDetail } from './service-detail.interface';
+import { Item } from './Item';
 
-export interface Component {
+export interface Component extends Item {
   id: string;
   modelId: string;
-  name?: string;
+  name: string;
   componentCategoryId: string;
   description?: string;
   origin?: string;
@@ -13,7 +14,7 @@ export interface Component {
   stock: number;
   createdAt: Date;
   updatedAt: Date;
-  slug?: string;
+  slug: string;
 
   // Relationships
   componentCategory?: ComponentCategory;

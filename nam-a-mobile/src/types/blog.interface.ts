@@ -1,16 +1,21 @@
 import { User } from './user.interface';
 
 export interface Blog {
-  id: string;
-  authorId: string;
+  id?: string;
+  authorId?: string;
+  author?: string;
   title?: string;
-  content?: string;
+  content: string;
   imageUrl?: string;
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt: string;
+  updatedAt?: Date;
   slug?: string;
-  isActive: boolean;
+  isActive?: boolean;
+  relatedPosts?: {
+    title: string;
+    slug: string
+  }[] 
 
   // Relationships
-  user: User[];
+  user?: User[];
 } 

@@ -3,6 +3,7 @@ import { Roboto, Raleway } from "next/font/google";
 import "../globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import AdminFloatingBubble from "@/components/layout/AdminFloatingBubble";
 // import Breadcrumbs from "@/components/layout/Breadcrumbs";
 import { headers } from "next/headers";
 
@@ -45,6 +46,7 @@ export default async function RootLayout({
           {children}
         </main>
         <Footer />
+        <AdminFloatingBubble />
       </body>
     </html>
   );

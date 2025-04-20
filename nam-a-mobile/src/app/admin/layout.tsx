@@ -4,6 +4,7 @@ import AdminSidebar from "./components/AdminSidebar";
 import "../globals.css";
 import { Metadata, Viewport } from 'next';
 import { Roboto, Raleway } from "next/font/google"; // re-import fonts
+import { ErrorBoundary } from "@/components/error-boundary";
 
 const roboto = Roboto({
   variable: "--font-roboto",
@@ -43,7 +44,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             <AdminHeader />
             <main className="flex-1 overflow-y-auto p-4 md:p-6 lg:p-8">
               <div className="max-w-7xl mx-auto">
-                {children}
+                  {children}
               </div>
             </main>
             <AdminFooter />

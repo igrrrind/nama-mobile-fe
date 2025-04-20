@@ -4,7 +4,7 @@ import { MuaSamClient } from '@/components/mua-sam/MuaSamClient';
 export default function ProductDetailPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
   // This would normally come from an API
   const product = {
@@ -169,7 +169,7 @@ export default function ProductDetailPage({
   ];
 
   return (
-    <div className="mx-auto px-4 py-4 bg-gradient-to-br from-primary/10 to-primary/5">
+    <div className="mx-auto px-4 pt-4 pb-20 bg-gradient-to-br from-primary/10 to-primary/5">
       <div className="container mx-auto max-w-7xl">
         <Breadcrumb items={breadcrumbItems} />
         <MuaSamClient product={product} />

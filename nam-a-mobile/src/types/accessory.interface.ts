@@ -1,10 +1,11 @@
 import { Model } from './model.interface';
 import { AccessoryCategory } from './accessory-category.interface';
+import { Item } from './Item';
 
-export interface Accessory {
+export interface Accessory extends Item {
   id: string;
   modelId: string;
-  name?: string;
+  name: string;
   accessoryCategoryId: string;
   description?: string;
   origin?: string;
@@ -12,7 +13,7 @@ export interface Accessory {
   stock: number;
   createdAt: Date;
   updatedAt: Date;
-  slug?: string;
+  slug: string;
 
   // Relationships
   accessoryCategory?: AccessoryCategory;
