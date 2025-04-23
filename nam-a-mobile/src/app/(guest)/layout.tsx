@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Roboto, Raleway } from "next/font/google";
+import { Mulish, Raleway } from "next/font/google";
 import "../globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -7,14 +7,15 @@ import AdminFloatingBubble from "@/components/layout/AdminFloatingBubble";
 // import Breadcrumbs from "@/components/layout/Breadcrumbs";
 import { headers } from "next/headers";
 
-const roboto = Roboto({
-  variable: "--font-roboto",
+
+const raleway = Raleway({
+  variable: "--font-raleway",
   subsets: ["latin"],
   weight: ["400", "700"], // Adjust weights as needed
 });
 
-const raleway = Raleway({
-  variable: "--font-raleway",
+const mulish = Mulish({
+  variable: "--font-mulish",
   subsets: ["latin"],
   weight: ["400", "700"], // Adjust weights as needed
 });
@@ -36,7 +37,7 @@ export default async function RootLayout({
   return (
     <html lang="vi">
       <body
-        className={`${raleway.variable} ${roboto.variable} antialiased`}
+        className={`${raleway.variable} ${mulish.variable} antialiased`}
       >
         {!isAdmin && <Header />}
         <main className="min-h-screen">

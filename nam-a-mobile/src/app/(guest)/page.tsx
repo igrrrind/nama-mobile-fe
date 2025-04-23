@@ -13,12 +13,12 @@ export default function Home() {
       {/* Hero Section */}
       <section className="bg-primary/5 py-6">
         <div className="container mx-auto px-4">
-          <Submenu/>
+          <div className='hidden sm:block'><Submenu/></div>
           <div className="container mx-auto px-4">
-            <div className="ml-72 grid md:grid-cols-3 grid-rows-2 gap-8 h-[400px] py-4">
-              <div className="col-span-2 row-span-2 bg-gray-200 rounded-2xl"></div>
-              <div className="bg-gray-200 rounded-2xl"></div>
-              <div className="bg-gray-200 rounded-2xl"></div>
+            <div className="sm:ml-60 xl:ml-64 flex sm:grid md:grid-cols-2 lg:grid-cols-3 md:grid-rows-3 lg:grid-rows-2 gap-4 xl:gap-8 sm:h-[400px] py-4">
+              <div className="w-full aspect-video sm:aspect-auto col-span-2 lg:col-span-2 row-span-2 bg-gray-200 rounded-2xl"></div>
+              <div className="hidden md:block bg-gray-200 rounded-2xl"></div>
+              <div className="hidden sm:block col-span-2 md:col-span-1 bg-gray-200 rounded-2xl"></div>
             </div>
           </div>
         </div>

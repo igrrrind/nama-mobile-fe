@@ -49,7 +49,7 @@ export function Submenu({ categories = categoriesSub }: SubmenuProps) {
 >
       <div className="flex border border-gray-200 rounded-2xl bg-white shadow-sm">
         {/* Left sidebar with categories */}
-        <div className="w-64 border-r border-gray-200">
+        <div className="w-56 border-r border-gray-200">
           <div className="p-4 border-b border-gray-200">
             <h2 className="text-lg font-bold text-gray-800">Danh mục dịch vụ</h2>
           </div>
