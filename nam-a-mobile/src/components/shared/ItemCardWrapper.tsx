@@ -43,8 +43,8 @@ export default function ItemCardWrapper({
     : undefined;
 
   return (
-    <section className="py-2 px-4">
-      <div className="container mx-auto px-4 py-4 rounded-2xl" style={gradientStyle}>
+    <section className="py-2">
+      <div className="container mx-auto px-4 py-4 sm:rounded-2xl" style={gradientStyle}>
         {sectionTitle && (
           <div className="w-full flex justify-between items-center mb-2 md:mb-4">
             <h2 className="text-2xl md:text-3xl font-bold text-left">

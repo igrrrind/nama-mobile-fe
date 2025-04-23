@@ -23,12 +23,12 @@ export default function ItemCard({ item, type = "dich-vu" }: { item: Item, type:
 
   return (
     <div onClick={handleClick} className={cardClasses}>
-      <div className="relative w-full p-2 overflow-hidden h-52 md:h-64 bg-white">
+      <div className="relative w-full p-2 overflow-hidden aspect-square md:h-64 bg-white">
         <Image
           src={imgSrc}
           alt={item.name}
           fill
-          className="object-cover p-2 group-hover:scale-110 transition-transform duration-200"
+          className="object-cover group-hover:scale-110 transition-transform duration-200"
           onError={() => setImgSrc("/placeholder.png")}
         />
         {/* {!item.stock || item.stock === 0 ? (

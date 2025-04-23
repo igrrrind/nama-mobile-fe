@@ -1,6 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { Search, MapPin, ShoppingCart, Calendar, Smartphone, Shield, Phone } from 'lucide-react';
+import { Search, MapPin, ShoppingCart, Calendar, Sparkles,
+  BookOpen,
+  ShieldCheck,
+  BadgeDollarSign, Phone } from 'lucide-react';
 import { MegaMenuClient, type CategoryType } from './MegaMenu/MegaMenuClient';
 import { Input } from '../ui/input';
 import MobileMenu from './MobileMenu';
@@ -69,9 +72,9 @@ export default function Header() {
       </div> */}
       <header className="bg-primary text-white py-2 fixed w-screen z-50">
         <div className="container mx-auto px-6">
-          <div className="flex items-center justify-between h-[60px] sm:h-[80px]">
+          <div className="flex items-center justify-between h-12 sm:h-16">
             {/* Logo */}
-            <Link href="/" className="flex-shrink-0 mr-4 mt-2 sm:w-[130px] w-[130px]">
+            <Link href="/" className="flex-shrink-0 mr-4 mt-2 sm:w-[130px] w-28">
               <Image src="/logo-text.svg" alt="Logo" width={130} height={80} />
             </Link>
 
@@ -153,38 +156,36 @@ export default function Header() {
           </div>
         </div>
       </header>
-      <div className='fixed mx-auto sm:top-[96px] top-[75px] w-screen bg-white border-gray-200 border-2 flex justify-center space-x-4 sm:space-x-8 py-2 items-center z-20 overflow-auto'>
+      <div className='fixed sm:top-[80px] top-16 w-full bg-white border-gray-200 border-2 flex justify-center sm:space-x-4 py-2 items-center z-20 overflow-x-auto hide-scrollbar'>
         {subHeaderItems.map( (i) =>  (
-          <div key = {i.title} className='flex items-center space-x-2'>{i.icon}<span className='text-black text-sm whitespace-nowrap'>{i.title}</span> </div>
+          <div key = {i.title} className='flex items-center px-4'>{i.icon}<span className='text-black text-xs sm:text-sm whitespace-nowrap px-2'>{i.title}</span> </div>
         )
         )}
-        
-
       </div>
-      <div className='py-2 sm:h-[126px] h-[105px]'>
+      <div className='py-2 sm:h-[120px] h-[105px]'>
 
       </div>
     </>
   );
 }
 
-
 const subHeaderItems = [
   {
-    title: "HÀNG MỚI VỀ",
-    icon: <Smartphone className='w-6 h-6' fill='black' stroke='white'/>
+    title: "HÀNG MỚI VỀ", // New arrivals
+    icon: <Sparkles className='w-5 h-5 text-primary' />
   },
   {
-    title: "BLOG CẨM NANG",
-    icon: <Smartphone className='w-6 h-6' fill='black'/>
+    title: "BLOG CẨM NANG", // Blog Guide / Handbook
+    icon: <BookOpen className='w-5 h-5 text-primary'  />
   },
   {
-    title: "CHÍNH SÁCH BẢO HÀNH",
-    icon: <Shield className='w-6 h-6' fill='black' stroke='white'/>
+    title: "CHÍNH SÁCH BẢO HÀNH", // Warranty Policy
+    icon: <ShieldCheck className='w-5 h-5 text-primary bg-blue' />
   },
   {
-    title: "BẢNG GIÁ DỊCH VỤ",
-    icon: <Smartphone className='w-6 h-6' fill='black'/>
+    title: "BẢNG GIÁ DỊCH VỤ", // Service Pricing
+    icon: <BadgeDollarSign className='w-5 h-5 text-primary'  />
   },
-]
+];
+
 
