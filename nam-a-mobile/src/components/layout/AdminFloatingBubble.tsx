@@ -13,7 +13,7 @@ export default function AdminFloatingBubble() {
   return (
     <Link
       href="/admin"
-      className="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-primary text-white px-4 py-3 rounded-full shadow-lg hover:bg-primary/90 transition-colors"
+      className="fixed bottom-6 right-6 z-50 hidden md:flex items-center gap-2 bg-primary text-white px-4 py-3 rounded-full shadow-lg hover:bg-primary/90 transition-colors"
     >
       <UserCog className="w-5 h-5" />
       <span className="font-medium">Quản trị viên</span>

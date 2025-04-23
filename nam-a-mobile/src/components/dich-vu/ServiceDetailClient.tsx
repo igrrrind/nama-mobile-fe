@@ -5,6 +5,7 @@ import { Shield, Clock, Wrench, Check, Star } from 'lucide-react';
 import { Rating } from '@/components/shared/Rating';
 import { PriceDisplay } from '@/components/shared/PriceDisplay';
 import { HtmlContent } from '@/components/shared/HtmlContent';
+import { MobileServiceDetails } from '@/components/shared/MobileServiceDetails';
 import Image from 'next/image';
 
 interface Service {
@@ -39,7 +40,7 @@ export function ServiceDetailClient({ service }: { service: Service }) {
 
   // Calculate the current price based on selected option
   const currentOption = service.options[selectedOption];
-  const currentPrice = currentOption && currentOption.price 
+  const currentPrice = currentOption && currentOption.price;
 
   return (
     <div className="grid md:grid-cols-12 gap-4 mt-4">
@@ -154,8 +155,8 @@ export function ServiceDetailClient({ service }: { service: Service }) {
       </div>
 
       {/* Right column - Service details and options */}
-      <div className="md:col-span-5 bg-white rounded-[10px] p-4">
-        <div className="sticky top-[120px]">
+      <div className="hidden md:block md:col-span-5 bg-white rounded-[10px] p-4">
+        <div className="sticky top-[154px]">
           <h1 className="text-2xl font-bold mb-3">{service.title}</h1>
           <Rating rating={service.rating} totalRatings={service.totalRatings} />
           
@@ -235,6 +236,14 @@ export function ServiceDetailClient({ service }: { service: Service }) {
           </div>
         </div>
       </div>
+
+      {/* Mobile Service Details */}
+      <MobileServiceDetails 
+        service={service}
+        selectedOption={selectedOption}
+        setSelectedOption={setSelectedOption}
+        currentPrice={currentPrice}
+      />
     </div>
   );
 }

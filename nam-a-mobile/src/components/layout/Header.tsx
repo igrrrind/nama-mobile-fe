@@ -161,7 +161,7 @@ export default function Header() {
         
 
       </div>
-      <div className='py-2 sm:h-[96px] h-[75px]'>
+      <div className='py-2 sm:h-[126px] h-[105px]'>
 
       </div>
     </>

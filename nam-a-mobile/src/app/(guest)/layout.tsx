@@ -41,7 +41,6 @@ export default async function RootLayout({
       >
         {!isAdmin && <Header />}
         <main className="min-h-screen">
-          <div className='h-[44px] container mx-auto'></div>
 
 
           {children}
