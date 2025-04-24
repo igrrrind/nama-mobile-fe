@@ -27,7 +27,7 @@ export default function SearchBar() {
       </button>
  
       <div 
-        className={`sm:hidden fixed top-[65px] left-0 w-full bg-primary  transition-[max-height,opacity] duration-500 overflow-hidden z-50 ${
+        className={`sm:hidden fixed top-16 left-0 w-full bg-primary  transition-[max-height,opacity] duration-500 overflow-hidden z-50 ${
           isOpen ? 'max-h-[60px] ease-out  ' : 'max-h-0 pointer-events-none ease-in-out'
         }`}
       >

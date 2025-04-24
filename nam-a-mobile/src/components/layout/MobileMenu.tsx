@@ -51,10 +51,10 @@ export default function MobileMenu() {
       </button>
  
       <div 
-        className={`sm:hidden fixed top-[60px] left-0 w-full bg-primary/95 transition-[max-height,opacity] duration-500 z-50 ${
-          isMobileMenuOpen ? 'max-h-[calc(100vh-60px)] ease-out h-[calc(100vh-60px)]' : 'max-h-0 pointer-events-none ease-in-out'        }`}
+        className={`sm:hidden fixed top-16 left-0 w-full bg-primary/95 overflow-y-auto transition-[max-height,opacity] duration-500 z-50 ${
+          isMobileMenuOpen ? 'max-h-[calc(100vh-64px)] ease-out' : 'max-h-0 pointer-events-none ease-in-out'        }`}
       >
-        <div className="h-full overflow-y-auto">
+        <div className="h-auto">
           <div className={`container mx-auto px-4 py-4 transition-opacity duration-300 ${!isMobileMenuOpen && 'opacity-0'}`}>
             {/* Mobile Search */}
             {/* <div className="mb-4">
@@ -70,7 +70,7 @@ export default function MobileMenu() {
               </div>
             </div> */}
             {/* Mobile Navigation */}
-            <nav className="flex flex-col space-y-4 py-2">
+            <nav className="flex flex-col space-y-4 ">
               <Link 
                 href="/dat-lich" 
                 className="flex items-center space-x-2 p-2 rounded-lg hover:bg-primary-dark transition-colors"

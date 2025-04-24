@@ -11,7 +11,7 @@ type Service = {
 };
 
 export const ServiceSection = ({ services = servicesFallback }: { services?: Service[] }) => {
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState<boolean | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const sliderRef = useRef<HTMLDivElement>(null);
 
@@ -82,7 +82,7 @@ export const ServiceSection = ({ services = servicesFallback }: { services?: Ser
   return (
     <section className="py-4 pb-8 bg-gray-50 -mt-16 sm:mt-0">
       <div className="container mx-auto px-4">
-        {isMobile ? (
+        {isMobile != null && (isMobile ? (
           <>
           <div className="relative overflow-hidden">
             {/* Navigation Arrows */}
@@ -117,16 +117,16 @@ export const ServiceSection = ({ services = servicesFallback }: { services?: Ser
                   data-index={index}
                   className="service-card flex-shrink-0 w-full snap-center p-4 flex rounded-2xl items-center bg-white shadow-md"
                 >
-                  <div className="w-20 h-20 mb-4 bg-blue-100 rounded-2xl flex items-center justify-center">
+                  {/* <div className="w-20 h-20 mb-4 bg-blue-100 rounded-2xl flex items-center justify-center">
                     <Image src={service.iconUrl} alt={service.title} width={64} height={64} className="w-16 h-16 object-contain" />
-                  </div>
-                  <div className="ml-4 flex-1">
-                    <h3 className="sm:text-lg font-semibold mb-2 text-left text-gray-800">{service.title}</h3>
+                  </div> */}
+                  <div className="ml-4 flex-1 overflow-hidden">
+                    <h3 className="sm:text-lg font-semibold mb-2 text-left text-gray-800 truncate">{service.title}</h3>
                     <ul className="text-sm text-blue-600 space-y-2">
                       {service.descriptionPoints.map((point, idx) => (
-                        <li key={idx} className="flex items-start gap-2 text-left">
+                        <li key={idx} className="flex items-start gap-2 text-left overflow-hidden">
                           <Link href={service.link} className="transition-colors flex items-left">
-                            <span className="hover:text-primary-dark">→ {point}</span>
+                            <span className="hover:text-primary-dark truncate">→ {point}</span>
                           </Link>
                         </li>
                       ))}
@@ -157,21 +157,21 @@ export const ServiceSection = ({ services = servicesFallback }: { services?: Ser
         </div>
         </>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3">
             {services.map((service) => (
               <div
                 key={service.title}
-                className="group p-4 flex w-full max-w-[360px] mx-auto rounded-2xl text-center items-center transition-all bg-white shadow-md hover:shadow-lg hover:-translate-y-1 duration-300"
+                className="group p-4 flex w-full max-w-[360px] sm:max-w-screen mx-auto rounded-2xl text-center items-center transition-all bg-white shadow-md hover:shadow-lg hover:-translate-y-1 duration-300"
               >
-                <div className="w-20 h-20 mb-4 bg-blue-100 rounded-2xl flex items-center justify-center">
+                <div className="min-w-20 w-20 min-h-20 h-20 mb-4 bg-blue-100 rounded-2xl flex items-center justify-center">
                   <Image src={service.iconUrl} alt={service.title} width={64} height={64} className="w-16 h-16 object-contain" />
                 </div>
-                <div className="ml-4 flex-1">
-                  <h3 className="text-lg font-semibold mb-2 text-left text-gray-800">{service.title}</h3>
+                <div className="ml-4 flex-1 overflow-hidden ">
+                  <h3 className="text-lg font-semibold mb-2 text-left text-gray-800 truncate">{service.title}</h3>
                   <ul className="text-sm text-blue-600 space-y-2">
                     {service.descriptionPoints.map((point, idx) => (
                       <li key={idx} className="flex items-start gap-2 text-left">
-                        <Link href={service.link} className="transition-colors flex items-left">
+                        <Link href={service.link} className="transition-colors truncate flex items-left">
                           <span className="hover:text-primary-dark">→ {point}</span>
                         </Link>
                       </li>
@@ -181,7 +181,11 @@ export const ServiceSection = ({ services = servicesFallback }: { services?: Ser
               </div>
             ))}
           </div>
-        )}
+        ))}
+
+        {isMobile === null && <div className=" flex " style={{height: 172}}>
+
+        </div>}
       </div>
     </section>
   );

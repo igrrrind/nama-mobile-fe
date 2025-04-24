@@ -156,7 +156,7 @@ export default function Header() {
           </div>
         </div>
       </header>
-      <div className='fixed sm:top-[80px] top-16 w-full bg-white border-gray-200 border-2 flex justify-center sm:space-x-4 py-2 items-center z-20 overflow-x-auto hide-scrollbar'>
+      <div className='fixed sm:top-[80px] top-16 w-full bg-white border-gray-200 border-2 flex sm:justify-center sm:space-x-4 py-2 items-center z-20 overflow-x-auto hide-scrollbar'>
         {subHeaderItems.map( (i) =>  (
           <div key = {i.title} className='flex items-center px-4'>{i.icon}<span className='text-black text-xs sm:text-sm whitespace-nowrap px-2'>{i.title}</span> </div>
         )

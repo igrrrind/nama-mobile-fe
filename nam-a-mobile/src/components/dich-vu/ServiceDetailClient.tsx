@@ -7,8 +7,9 @@ import { PriceDisplay } from '@/components/shared/PriceDisplay';
 import { HtmlContent } from '@/components/shared/HtmlContent';
 import { MobileServiceDetails } from '@/components/shared/MobileServiceDetails';
 import Image from 'next/image';
+import ProductGallery from '../shared/ProductGallery';
 
-interface Service {
+export interface Service {
   title: string;
   rating: number;
   totalRatings: number;
@@ -46,41 +47,7 @@ export function ServiceDetailClient({ service }: { service: Service }) {
     <div className="grid md:grid-cols-12 gap-4 mt-4">
       {/* Left column - Gallery and Content */}
       <div className="md:col-span-7">
-        <div className="flex gap-4 bg-white rounded-[10px] p-4">
-          {/* Thumbnails sidebar */}
-          <div className="flex flex-col gap-3">
-            {service.gallery.map((image, index) => (
-              <div
-                key={index}
-                className={`w-14 h-14 bg-gray-200 rounded-lg overflow-hidden cursor-pointer border-2 ${
-                  selectedImage === index ? 'border-primary' : 'border-transparent'
-                }`}
-                onClick={() => setSelectedImage(index)}
-              >
-                <Image 
-                  src={image.src} 
-                  alt={image.alt} 
-                  width={100}
-                  height={100}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            ))}
-          </div>
-          
-          {/* Main image - reduced height and fixed aspect ratio */}
-          <div className="flex-1">
-            <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-gray-200">
-              <Image 
-                src={service.gallery[selectedImage].src} 
-                alt={service.gallery[selectedImage].alt}
-                className="w-full h-full object-contain" 
-                width={500}
-                height={300}
-              />
-            </div>
-          </div>
-        </div>
+        <ProductGallery service={service}/>
 
         <div className="mt-4 bg-white rounded-[10px] p-4">
           <HtmlContent content={service.content} />
