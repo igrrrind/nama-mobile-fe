@@ -11,13 +11,15 @@ interface ItemCardWrapperProps {
   sectionTitle?: string;
   gradientColor?: string;
   className?: string;
+  type?: "dich-vu" | "mua-sam"
 }
 
 export default function ItemCardWrapper({
   items,
   sectionTitle,
   gradientColor,
-  className = ""
+  className = "",
+  type = "dich-vu"
 }: ItemCardWrapperProps) {
   // If no section title or gradient color, render basic product grid
   if (!sectionTitle && !gradientColor) {
@@ -72,7 +74,7 @@ export default function ItemCardWrapper({
         )}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 md:gap-3">
           {items.map((item) => (
-            <ItemCard item={item} key={item.id} type="dich-vu" />
+            <ItemCard item={item} key={item.id} type={type} />
           ))}
         </div>
       </div>

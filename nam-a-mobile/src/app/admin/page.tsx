@@ -18,7 +18,7 @@ export default function AdminDashboard() {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 p-6">
       <div className="flex items-center justify-between">
         <h1 className="text-3xl font-bold">Bảng điều khiển</h1>
         <p className="text-sm text-gray-500">Cập nhật lần cuối: {new Date().toLocaleString('vi-VN')}</p>

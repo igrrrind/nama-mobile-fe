@@ -5,16 +5,15 @@ import { Shield, Clock, Wrench, Check, Star } from 'lucide-react';
 import { Rating } from '@/components/shared/Rating';
 import { PriceDisplay } from '@/components/shared/PriceDisplay';
 import { HtmlContent } from '@/components/shared/HtmlContent';
-import { MobileServiceDetails } from '@/components/shared/MobileServiceDetails';
 import ProductGallery from '../shared/ProductGallery';
+import { MobileModelDetails } from './MobileModelDetails';
 
-export interface Service {
+export interface Model {
   title: string;
   rating: number;
   totalRatings: number;
   price: number;
   warranty: string;
-  repairTime: string;
   gallery: Array<{
     src: string;
     alt: string;
@@ -33,23 +32,23 @@ export interface Service {
   }>;
 }
 
-export function ServiceDetailClient({ service }: { service: Service }) {
+export function ModelDetailClient({ model }: { model: Model }) {
   // State for selected option and image
   const [selectedOption, setSelectedOption] = useState(0);
   const [selectedImage, setSelectedImage] = useState(0);
 
   // Calculate the current price based on selected option
-  const currentOption = service.options[selectedOption];
+  const currentOption = model.options[selectedOption];
   const currentPrice = currentOption && currentOption.price;
 
   return (
     <div className="grid md:grid-cols-12 gap-4 mt-4">
       {/* Left column - Gallery and Content */}
       <div className="md:col-span-7 ">
-        <ProductGallery gallery={service.gallery}/>
+        <ProductGallery gallery={model.gallery}/>
 
         <div className="mt-4 bg-white rounded-[10px] p-4">
-          <HtmlContent content={service.content} />
+          <HtmlContent content={model.content} />
         </div>
 
         {/* Reviews Section */}
@@ -84,7 +83,7 @@ export function ServiceDetailClient({ service }: { service: Service }) {
 
           {/* Reviews List */}
           <div className="space-y-4">
-            {service.reviews.map((review) => (
+            {model.reviews.map((review) => (
               <div key={review.id} className="border rounded-lg p-3">
                 <div className="flex items-center justify-between mb-2">
                   <div className="flex items-center gap-2">
@@ -123,12 +122,12 @@ export function ServiceDetailClient({ service }: { service: Service }) {
       {/* Right column - Service details and options */}
       <div className="hidden md:block md:col-span-5 bg-white rounded-[10px] p-4">
         <div className="sticky top-[154px]">
-          <h1 className="text-2xl font-bold mb-3">{service.title}</h1>
-          <Rating rating={service.rating} totalRatings={service.totalRatings} />
+          <h1 className="text-2xl font-bold mb-3">{model.title}</h1>
+          <Rating rating={model.rating} totalRatings={model.totalRatings} />
           
           <PriceDisplay
             currentPrice={currentPrice}
-            originalPrice={service.price}
+            originalPrice={model.price}
           />
           
           <p className="text-xs text-gray-600 mt-2">
@@ -138,18 +137,14 @@ export function ServiceDetailClient({ service }: { service: Service }) {
           <div className="flex items-center gap-4 mt-3">
             <div className="flex items-center gap-1">
               <Shield className="w-4 h-4 text-primary" />
-              <span className="text-sm">Bảo hành {service.warranty}</span>
-            </div>
-            <div className="flex items-center gap-1">
-              <Clock className="w-4 h-4 text-primary" />
-              <span className="text-sm">Sửa {service.repairTime}</span>
+              <span className="text-sm">Bảo hành {model.warranty}</span>
             </div>
           </div>
 
           <div className="mt-6">
             <h3 className="font-semibold mb-3 text-sm">CHỌN LOẠI LINH KIỆN</h3>
             <div className="space-y-3">
-              {service.options.map((option, index) => (
+              {model.options.map((option, index) => (
                 <div
                   key={index}
                   className={`border rounded-lg p-3 cursor-pointer transition-colors ${
@@ -204,8 +199,8 @@ export function ServiceDetailClient({ service }: { service: Service }) {
       </div>
 
       {/* Mobile Service Details */}
-      <MobileServiceDetails 
-        service={service}
+      <MobileModelDetails 
+        model={model}
         selectedOption={selectedOption}
         setSelectedOption={setSelectedOption}
         currentPrice={currentPrice}

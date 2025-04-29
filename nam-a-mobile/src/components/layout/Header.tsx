@@ -8,6 +8,7 @@ import { MegaMenuClient, type CategoryType } from './MegaMenu/MegaMenuClient';
 import { Input } from '../ui/input';
 import MobileMenu from './MobileMenu';
 import SearchBar from './SearchBar';
+import CartSheet from '../cart/CartSheet';
 
 export const categories: CategoryType[] = [
   {
@@ -100,14 +101,7 @@ export default function Header() {
             <div className=' sm:hidden flex items-center space-x-2'>
               <SearchBar/>
               
-              <Link href="/gio-hang" className="flex items-center space-x-2 p-2 rounded-full hover:bg-primary-dark transition-colors">
-                <div className="relative">
-                  <ShoppingCart className="w-5 h-5" />
-                  <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">
-                    0
-                  </span>
-                </div>
-              </Link>
+              <CartSheet/>
 
               {/* Burger Menu */}
               <div className=''>
@@ -144,14 +138,7 @@ export default function Header() {
                 <span className='font-bold italic text-lg'>0937 356 999</span>
               </Link>
               
-              <Link href="/gio-hang" className="flex items-center space-x-2 p-2 rounded-full hover:bg-primary-dark transition-colors">
-                <div className="relative">
-                  <ShoppingCart className="w-5 h-5" />
-                  <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">
-                    0
-                  </span>
-                </div>
-              </Link>
+              <CartSheet/>
             </div>
           </div>
         </div>

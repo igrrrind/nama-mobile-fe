@@ -4,7 +4,7 @@ import { ServiceRequest } from './service-request.interface';
 import { Order } from './order.interface';
 
 export interface Customer {
-  id: string;
+  id?: string;
   fullName?: string;
   email?: string;
   phoneNumber?: string;

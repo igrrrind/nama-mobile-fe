@@ -1,4 +1,4 @@
-const BASE_URL = 'api/product'
+const BASE_URL = 'product'
 
 export const PRODUCT_API = {
     GET_ALL: `${BASE_URL}`,

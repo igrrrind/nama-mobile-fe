@@ -1,5 +1,5 @@
+import { Model, ModelDetailClient } from '@/components/mua-sam/ModelDetailClient';
 import { Breadcrumb } from '@/components/shared/Breadcrumb';
-import { MuaSamClient } from '@/components/mua-sam/MuaSamClient';
 
 export default function ProductDetailPage({
   params,
@@ -7,12 +7,11 @@ export default function ProductDetailPage({
   params: Promise<{ slug: string }>;
 }) {
   // This would normally come from an API
-  const product = {
+  const model: Model = {
     title: 'iPhone 11 64GB',
     rating: 5,
     totalRatings: 22,
-    currentPrice: 7900000,
-    originalPrice: 12900000,
+    price: 7900000,
     warranty: '12 Tháng',
     gallery: [
       { src: "/api/placeholder/800/600", alt: "iPhone 11 Black" },
@@ -165,14 +164,14 @@ export default function ProductDetailPage({
   const breadcrumbItems = [
     { label: 'Điện thoại', href: '/mua-sam/dien-thoai' },
     { label: 'iPhone', href: '/mua-sam/dien-thoai/iphone' },
-    { label: product.title },
+    { label: model.title },
   ];
 
   return (
     <div className="mx-auto px-4 pt-4 pb-20 bg-gradient-to-br from-primary/10 to-primary/5">
       <div className="container mx-auto max-w-7xl">
         <Breadcrumb items={breadcrumbItems} />
-        <MuaSamClient product={product} />
+        <ModelDetailClient model={model} />
       </div>
     </div>
   );

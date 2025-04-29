@@ -1,5 +1,7 @@
 import { ServiceRequest, Order, Service, Product, Component, Accessory, User, Banner } from '@/types';
 import { ServiceStatus, OrderStatus, UserStatus, Role, CartStatus } from '@/types/enums';
+import { ComponentCategory } from "@/types/component-category.interface";
+import { AccessoryCategory } from "@/types/accessory-category.interface";
 
 export const serviceRequests: ServiceRequest[] = [
   {
@@ -105,8 +107,58 @@ export const components: Component[] = [
     image: 'component1.jpg',
     rating: 4.7,
     reviews: 85,
-    serviceDetails: []
+    serviceDetails: [],
+    componentCategory: {
+      id: 'CC001',
+      name: 'Màn hình',
+    }
   }
+];
+
+export const componentCategories: ComponentCategory[] = [
+  { id: "cat01", name: "Màn hình" },
+  { id: "cat02", name: "Pin" },
+  { id: "cat03", name: "Camera" },
+  { id: "cat04", name: "Loa ngoài" },
+  { id: "cat05", name: "Loa trong" },
+  { id: "cat06", name: "Cáp sạc" },
+  { id: "cat07", name: "Mainboard" },
+  { id: "cat08", name: "Vỏ máy" },
+  { id: "cat09", name: "Nút nguồn" },
+  { id: "cat10", name: "Nút âm lượng" },
+  { id: "cat11", name: "Kính lưng" },
+  { id: "cat12", name: "Cụm rung" },
+  { id: "cat13", name: "Cụm sạc" },
+  { id: "cat14", name: "Cụm cảm biến" },
+  { id: "cat15", name: "Cụm Face ID" },
+  { id: "cat16", name: "Cụm Touch ID" },
+  { id: "cat17", name: "Cụm micro" },
+  { id: "cat18", name: "Cụm sim" },
+  { id: "cat19", name: "Cụm wifi" },
+  { id: "cat20", name: "Cụm bluetooth" },
+];
+
+export const accessoryCategories: AccessoryCategory[] = [
+  { id: "acc01", name: "Ốp lưng" },
+  { id: "acc02", name: "Cường lực" },
+  { id: "acc03", name: "Sạc dự phòng" },
+  { id: "acc04", name: "Tai nghe" },
+  { id: "acc05", name: "Cáp dữ liệu" },
+  { id: "acc06", name: "Thẻ nhớ" },
+  { id: "acc07", name: "Giá đỡ điện thoại" },
+  { id: "acc08", name: "Bút cảm ứng" },
+  { id: "acc09", name: "Miếng dán màn hình" },
+  { id: "acc10", name: "Balo - Túi chống sốc" },
+  { id: "acc11", name: "Loa bluetooth" },
+  { id: "acc12", name: "Đèn LED" },
+  { id: "acc13", name: "Bộ vệ sinh" },
+  { id: "acc14", name: "Remote chụp ảnh" },
+  { id: "acc15", name: "Đế sạc không dây" },
+  { id: "acc16", name: "Quạt mini" },
+  { id: "acc17", name: "USB OTG" },
+  { id: "acc18", name: "Bộ chia cổng" },
+  { id: "acc19", name: "Pin tiểu" },
+  { id: "acc20", name: "Khác" },
 ];
 
 export const accessories: Accessory[] = [
@@ -150,4 +202,4 @@ export const banners: Banner[] = [
     imageUrl: 'banner1.jpg',
     redirectUrl: '/promotions'
   }
-]; 
+];

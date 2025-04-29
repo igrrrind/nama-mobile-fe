@@ -2,9 +2,9 @@ import { Cart } from './cart.interface';
 import { Product } from './product.interface';
 
 export interface CartItem {
-  id: string;
+  id?: string;
   cartId: string;
-  productId: string;
+  productId?: string;
   quantity: number;
   price: number;
 

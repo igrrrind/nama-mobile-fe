@@ -9,6 +9,7 @@ export interface Model {
   id: string;
   brandId: string;
   name?: string;
+  brandName?: string;
   description?: string;
   slug?: string;
 
@@ -20,3 +21,5 @@ export interface Model {
   feedbacks?: Feedback[];
   brand?: Brand;
 } 
+
+//Đang cần 1 hàm getModel

@@ -14,7 +14,7 @@ export const HtmlContent = ({ content, className = '' }: HtmlContentProps) => {
   return (
     <div className={`relative ${className}`}>
       <div
-        className={`prose prose-lg max-w-none transition-all duration-300 ease-in-out ${
+        className={`prose prose-sm custom-editor-content ProseMirror max-w-none transition-all duration-300 ease-in-out ${
           isContentExpanded || !isLongContent ? '' : 'max-h-[300px] overflow-hidden'
         }`}
         dangerouslySetInnerHTML={{ __html: content }}

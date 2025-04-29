@@ -29,8 +29,8 @@ export default function Home() {
       <ItemCardWrapper items={featuredProducts} sectionTitle='Dịch vụ sửa chữa phổ biến' gradientColor='#004de0'/>
 
       {/* More ItemCardWrapper Sections */}
-      <ItemCardWrapper items={extraItems1} sectionTitle='Phụ kiện nổi bật' gradientColor='#00b894'/>
-      <ItemCardWrapper items={extraItems2} sectionTitle='Combo ưu đãi' gradientColor='#fdcb6e'/>
+      <ItemCardWrapper items={extraItems1} sectionTitle='Phụ kiện nổi bật' gradientColor='#00b894' type="mua-sam"/>
+      <ItemCardWrapper items={extraItems2} sectionTitle='Combo ưu đãi' gradientColor='#fdcb6e' type="mua-sam"/>
 
       {/* Why Choose Us */}
       <section className="py-16">

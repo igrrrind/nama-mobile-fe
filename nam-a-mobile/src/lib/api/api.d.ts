@@ -6,7 +6,7 @@ interface BaseResponse<T = unknown> {
 }
 
 interface PageinationResult<T = unknown> {
-    data?: T;
+    data?: T[];
     pagination : Paginate
 
 }

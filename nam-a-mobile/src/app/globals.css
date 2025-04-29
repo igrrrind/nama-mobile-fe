@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -170,4 +171,109 @@
 
 .hide-scrollbar::-webkit-scrollbar {
   display: none; /* Chrome, Safari */
+}
+
+.ProseMirror:focus {
+  outline: none;
+}
+
+.custom-editor-content .ProseMirror {
+  line-height: 1.4;
+}
+
+.custom-editor-content p {
+  margin: 0.5em 0;
+}
+
+.custom-editor-content .ProseMirror p:first-child {
+  margin-top: 0;
+}
+
+.custom-editor-content .ProseMirror p:last-child {
+  margin-bottom: 0;
+}
+
+.ProseMirror p {
+  margin: 0.5em 0;
+}
+
+.ProseMirror h1 {
+  font-size: 1.75em;
+  font-weight: bold;
+  margin: 0.75em 0 0.5em;
+}
+
+.ProseMirror h2 {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 0.75em 0 0.5em;
+}
+
+.ProseMirror h3 {
+  font-size: 1.25em;
+  font-weight: bold;
+  margin: 0.75em 0 0.5em;
+}
+
+.ProseMirror p:first-child {
+  margin-top: 0;
+}
+
+.ProseMirror p:last-child {
+  margin-bottom: 0;
+}
+
+.ProseMirror table {
+  border-collapse: collapse;
+  margin: 0;
+  overflow: hidden;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.ProseMirror table td, 
+.ProseMirror table th {
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  min-width: 1em;
+  padding: 0.5em 1em;
+  position: relative;
+  vertical-align: top;
+}
+
+.ProseMirror {
+  line-height: 1.4;
+}
+.ProseMirror table th {
+  background-color: #f1f1f1;
+  font-weight: bold;
+  text-align: left;
+}
+
+/* Highlight the current table cell */
+.ProseMirror .has-focus {
+  background-color: #e8f4fe;
+}
+
+/* Table column resize handle */
+.ProseMirror .tableWrapper .column-resize-handle {
+  background-color: #adf;
+  bottom: -2px;
+  position: absolute;
+  right: -2px;
+  pointer-events: none;
+  top: 0;
+  width: 4px;
+}
+
+.ProseMirror .selectedCell:after {
+  background: rgba(200, 200, 255, 0.4);
+  content: "";
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: 2;
 }

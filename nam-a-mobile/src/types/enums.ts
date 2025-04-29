@@ -37,3 +37,11 @@ export enum ServiceStatus {
   Đã_giao_thiết_bị = 'Đã_giao_thiết_bị',
   Đã_huỷ = 'Đã_huỷ'
 }
+
+export enum ModelType {
+  Điện_thoại,
+  Linh_kiện,
+  Phụ_kiện,
+  Đồng_hồ,
+  Máy_tính,
+}

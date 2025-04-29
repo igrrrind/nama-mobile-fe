@@ -40,7 +40,7 @@ export default async function RootLayout({
         className={`${raleway.variable} ${mulish.variable} antialiased`}
       >
         {!isAdmin && <Header />}
-        <main className="min-h-screen">
+        <main className="min-h-screen ">
 
 
           {children}

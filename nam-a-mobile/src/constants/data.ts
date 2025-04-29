@@ -1,3 +1,7 @@
+import { Product } from "@/types";
+import { CartItem } from "@/types/cart-item.interface";
+import { Cart } from "@/types/cart.interface";
+import { CartStatus } from "@/types/enums";
 import { Item } from "@/types/Item";
 
 export const mockItems: Item[] = [
@@ -118,4 +122,74 @@ export const extraItems1: Item[] = [
       stock: 5
     }
   ];
+
+  const mockProducts: Product[] = [
+    {
+      id: "P001",
+      slug: "iphone-13-pro-max",
+      image: "/images/iphone13promax.jpg",
+      name: "iPhone 13 Pro Max",
+      price: 15000000,
+      rating: 4.8,
+      reviews: 250,
+      stock: 5,
+      modelId: "M001",
+      conditionId: "C001",
+      colorId: "COL001",
+      storageId: "S001",
+      cartItems: [],
+      condition: { id: "C001", name: "used" },
+    },
+    {
+      id: "P002",
+      slug: "samsung-galaxy-s22",
+      image: "/images/galaxy-s22.jpg",
+      name: "Samsung Galaxy S22",
+      price: 12000000,
+      rating: 4.7,
+      reviews: 180,
+      stock: 3,
+      modelId: "M002",
+      conditionId: "C002",
+      colorId: "COL002",
+      storageId: "S002",
+      cartItems: [],
+      condition: { id: "C002", name: "new" },
+    },
+  ];
+  
+  // Mock cart items
+  const mockCartItems: CartItem[] = [
+    {
+      id: "CI001",
+      cartId: "CART001",
+      productId: "P001",
+      quantity: 1,
+      price: 15000000,
+      product: mockProducts[0],
+    },
+    {
+      id: "CI002",
+      cartId: "CART001",
+      productId: "P002",
+      quantity: 2,
+      price: 12000000,
+      product: mockProducts[1],
+    },
+  ];
+
+  export const mockCart: Cart = {
+    id: "CART001",
+    customerId: "CUST001",
+    createdAt: new Date(),
+    updatedAt: new Date(),
+    status: CartStatus.Active,
+    totalPrice: mockCartItems.reduce((sum, item) => sum + item.price * item.quantity, 0),
+    cartItems: mockCartItems,
+    customer: {
+      id: "CUST001",
+      fullName: "Nguyễn Văn A",
+      phoneNumber: "0909123456",
+    },
+  };
   

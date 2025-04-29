@@ -3,7 +3,7 @@ import axios, {
   AxiosResponse,
   InternalAxiosRequestConfig,
 } from "axios";
-import handleError from "./error";
+// import handleError from "./error";
 
 // Create axios instance
 export const axiosClient = axios.create({
@@ -21,7 +21,7 @@ axiosClient.interceptors.request.use(
     return config;
   },
   (error: AxiosError) => {
-    handleError(error);
+    // handleError(error);
     return Promise.reject(error);
   }
 );
@@ -30,14 +30,14 @@ axiosClient.interceptors.request.use(
 axiosClient.interceptors.response.use(
   (response: AxiosResponse) => response,
   (error: AxiosError) => {
-    handleError(error);
+    // console.log(error);
 
-    const message = (error.response?.data as BaseResponse)?.message;
-    if (message?.includes("is not exists.")) {
-      localStorage.setItem("isNotExist", "true");
-    } else {
-      localStorage.setItem("isNotExist", "");
-    }
+    // const message = (error.response?.data as BaseResponse)?.message;
+    // // if (message?.includes("is not exists.")) {
+    // //   localStorage.setItem("isNotExist", "true");
+    // // } else {
+    // //   localStorage.setItem("isNotExist", "");
+    // // }
 
     return Promise.reject(error);
   }

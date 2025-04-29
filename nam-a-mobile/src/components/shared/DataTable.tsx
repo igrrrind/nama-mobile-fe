@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react";
+import React, { useState } from "react";
 import {
   type ColumnDef,
   flexRender,
@@ -72,14 +72,14 @@ export function DataTable<TData extends object, TValue>({
 
   return (
     <div className="rounded-md border overflow-x-auto">
-      <Table className="w-full">
+      <Table className="w-full text-xs">
         <TableHeader className="sticky top-0 bg-neutral-100 z-10 shadow">
           {table.getHeaderGroups().map((headerGroup) => (
             <TableRow key={headerGroup.id}>
               {headerGroup.headers.map((header) => (
                 <TableHead
                   key={header.id}
-                  className={cn(header.column.columnDef.meta, "whitespace-nowrap")}
+                  className={cn(header.column.columnDef.meta, "whitespace-nowrap text-primary")}
                 >
                   {header.isPlaceholder
                     ? null
@@ -93,9 +93,9 @@ export function DataTable<TData extends object, TValue>({
         <TableBody>
           {table.getRowModel().rows?.length ? (
             table.getRowModel().rows.map((row) => (
-              <>
+              <React.Fragment key={row.id}>
                 <TableRow
-                  key={row.id}
+                  // key={row.id}
                   data-state={row.getIsSelected() && "selected"}
                   className={row.getCanExpand() ? "cursor-pointer hover:bg-muted/50" : ""}
                   onClick={() => row.getCanExpand() && row.toggleExpanded()}
@@ -115,7 +115,7 @@ export function DataTable<TData extends object, TValue>({
                     </TableCell>
                   </TableRow>
                 )}
-              </>
+              </React.Fragment>
             ))
           ) : (
             <TableRow>
