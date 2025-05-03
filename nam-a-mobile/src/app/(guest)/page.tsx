@@ -390,8 +390,8 @@ export default function Home() {
                   </div>
                 </div>
                 <p className="italic text-gray-700 text-lg">
-                  "Dịch vụ rất chuyên nghiệp, sửa máy nhanh và giá hợp lý. Sẽ giới thiệu cho bạn bè! Thái độ nhân viên
-                  rất tốt, tận tình."
+                  &quot;Dịch vụ rất chuyên nghiệp, sửa máy nhanh và giá hợp lý. Sẽ giới thiệu cho bạn bè! Thái độ nhân viên
+                  rất tốt, tận tình.&quot;
                 </p>
               </CardContent>
               <CardFooter>
@@ -425,8 +425,8 @@ export default function Home() {
                     </div>
                   </div>
                   <p className="italic text-gray-700">
-                    "Nhân viên tư vấn nhiệt tình, linh kiện chính hãng, rất yên tâm khi sửa chữa tại đây. Đặc biệt là
-                    giá cả rất hợp lý."
+                    &quot;Nhân viên tư vấn nhiệt tình, linh kiện chính hãng, rất yên tâm khi sửa chữa tại đây. Đặc biệt là
+                    giá cả rất hợp lý.&quot;
                   </p>
                 </CardContent>
               </Card>
@@ -451,8 +451,8 @@ export default function Home() {
                     </div>
                   </div>
                   <p className="italic text-gray-700">
-                    "Bảo hành rõ ràng, hỗ trợ sau sửa chữa tốt. Sẽ quay lại khi cần! Đánh giá 5 sao cho chất lượng dịch
-                    vụ."
+                    &quot;Bảo hành rõ ràng, hỗ trợ sau sửa chữa tốt. Sẽ quay lại khi cần! Đánh giá 5 sao cho chất lượng dịch
+                    vụ.&quot;
                   </p>
                 </CardContent>
               </Card>
