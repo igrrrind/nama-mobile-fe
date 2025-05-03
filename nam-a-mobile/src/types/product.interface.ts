@@ -8,9 +8,13 @@ import { Item } from './Item';
 export interface Product extends Item {
   id: string;
   modelId: string;
+  modelName?: string;
   conditionId: string;
+  conditionName?: string;
   colorId: string;
+  colorName?: string;
   storageId: string;
+  storageName?: string;
   price: number;
   stock: number;
 

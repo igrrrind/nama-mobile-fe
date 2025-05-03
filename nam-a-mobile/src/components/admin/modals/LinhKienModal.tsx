@@ -30,7 +30,7 @@ interface LinhKienModalProps {
   readonly description: string;
   readonly children: ReactNode;
   componentCategories: ComponentCategory[];
-  models: Model[]
+  models: Model[];
   readonly existingComponent?: Component;
 }
 
@@ -52,7 +52,7 @@ export default function LinhKienModal({
   existingComponent,
   description,
   componentCategories,
-  models
+  models,
 }: LinhKienModalProps) {
   const [loading, setLoading] = useState(false);
   const [open, setOpen] = useState(false);
@@ -61,7 +61,7 @@ export default function LinhKienModal({
   );
 
   const form = useForm<FormData>({
-    mode:"onChange",
+    mode: "onChange",
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: existingComponent?.name ?? "",
@@ -106,7 +106,9 @@ export default function LinhKienModal({
               <MessageCircleWarningIcon />
               Thông tin cơ bản
             </TabsTrigger>
-            <TabsTrigger value="description">Mô tả riêng cho linh kiện</TabsTrigger>
+            <TabsTrigger value="description">
+              Mô tả riêng cho linh kiện
+            </TabsTrigger>
           </TabsList>
 
           {/* Basic Info Tab */}
@@ -136,63 +138,71 @@ export default function LinhKienModal({
               />
 
               <div className="grid grid-cols-2 gap-4">
-              <FormField
-                control={form.control}
-                name="componentCategoryId"
-                render={({ field, fieldState: { error } }) => (
-                  <FormItem>
-                    <FormLabel className="font-medium text-sm">
-                      Danh mục linh kiện
-                    </FormLabel>
-                    <FormControl>
-                      <CustomSelect
-                        value={field.value}
-                        onChange={field.onChange}
-                        placeholder="Chọn danh mục..."
-                        options={componentCategories.map(category => ({
-                          value: category.id,
-                          label: category.name ?? "",
-                        }))}
-                        className={error ? "shadow-sm border-red-500 focus:ring-red-500" : "shadow-sm"}
-                      />
-                    </FormControl>
-                    {/* Commenting out helper text to match screenshot */}
-                    {/* <p className="text-xs text-gray-500">
+                <FormField
+                  control={form.control}
+                  name="componentCategoryId"
+                  render={({ field, fieldState: { error } }) => (
+                    <FormItem>
+                      <FormLabel className="font-medium text-sm">
+                        Danh mục linh kiện
+                      </FormLabel>
+                      <FormControl>
+                        <CustomSelect
+                          value={field.value}
+                          onChange={field.onChange}
+                          placeholder="Chọn danh mục..."
+                          options={componentCategories.map((category) => ({
+                            value: category.id,
+                            label: category.name ?? "",
+                          }))}
+                          className={
+                            error
+                              ? "shadow-sm border-red-500 focus:ring-red-500"
+                              : "shadow-sm"
+                          }
+                        />
+                      </FormControl>
+                      {/* Commenting out helper text to match screenshot */}
+                      {/* <p className="text-xs text-gray-500">
                       Vui lòng chọn danh mục
                     </p> */}
-                    <FormMessage className="text-xs" />
-                  </FormItem>
-                )}
-              />
+                      <FormMessage className="text-xs" />
+                    </FormItem>
+                  )}
+                />
 
-<FormField
-                control={form.control}
-                name="modelId"
-                render={({ field, fieldState: { error } }) => (
-                  <FormItem>
-                    <FormLabel className="font-medium text-sm">
-                      Mẫu linh kiện
-                    </FormLabel>
-                    <FormControl>
-                      <CustomSelect
-                        value={field.value}
-                        onChange={field.onChange}
-                        placeholder="Chọn mẫu linh kiện..."
-                        options={models.map(model => ({
-                          value: model.id,
-                          label: model.name ?? "",
-                        }))}
-                        className={error ? "shadow-sm border-red-500 focus:ring-red-500" : "shadow-sm"}
-                      />
-                    </FormControl>
-                    {/* Commenting out helper text to match screenshot */}
-                    {/* <p className="text-xs text-gray-500">
+                <FormField
+                  control={form.control}
+                  name="modelId"
+                  render={({ field, fieldState: { error } }) => (
+                    <FormItem>
+                      <FormLabel className="font-medium text-sm">
+                        Mẫu linh kiện
+                      </FormLabel>
+                      <FormControl>
+                        <CustomSelect
+                          value={field.value}
+                          onChange={field.onChange}
+                          placeholder="Chọn mẫu linh kiện..."
+                          options={models.map((model) => ({
+                            value: model.id,
+                            label: model.name ?? "",
+                          }))}
+                          className={
+                            error
+                              ? "shadow-sm border-red-500 focus:ring-red-500"
+                              : "shadow-sm"
+                          }
+                        />
+                      </FormControl>
+                      {/* Commenting out helper text to match screenshot */}
+                      {/* <p className="text-xs text-gray-500">
                       Vui lòng chọn danh mục
                     </p> */}
-                    <FormMessage className="text-xs" />
-                  </FormItem>
-                )}
-              />
+                      <FormMessage className="text-xs" />
+                    </FormItem>
+                  )}
+                />
 
                 <FormField
                   control={form.control}
@@ -209,9 +219,7 @@ export default function LinhKienModal({
                             type="number"
                             className="pl-8 shadow-sm"
                             {...field}
-                            onChange={(e) =>
-                              field.onChange(Number(e.target.value))
-                            }
+                            onChange={(e) => field.onChange(e.target.valueAsNumber)} 
                           />
                         </div>
                       </FormControl>

@@ -3,8 +3,8 @@ import { getRequest, postRequest, putRequest, deleteRequest } from "./base.servi
 import { MODEL_API } from "@/constants/api/model";
 
 export const modelService = {
-  getModels: async () => {
-    return getRequest<PageinationResult<Model>>(MODEL_API.GET_ALL);
+  getModels: async (page?: PageReq) => {
+    return getRequest<PageinationResult<Model>>(MODEL_API.GET_ALL(page?.page, page?.pageSize));
   },
 
   createModel: async (data: Partial<Model>) => {

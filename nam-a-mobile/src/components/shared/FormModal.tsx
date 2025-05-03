@@ -9,7 +9,7 @@ interface FormModalProps {
   title: string;
   trigger: ReactNode;
   FormComponent: ReactNode; // Pass the full <Form /> component
-  description: string;
+  description?: string;
   open: boolean;
   setOpen: (value: boolean) => void
 }
@@ -26,7 +26,7 @@ export function FormModal({ title, trigger, FormComponent, open, setOpen, descri
           <DialogDescription>{description}</DialogDescription>
         </DialogHeader>
 
-        <div className="py-4">
+        <div className="pt-4">
           {FormComponent}
         </div>
 

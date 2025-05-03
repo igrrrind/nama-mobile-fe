@@ -107,65 +107,65 @@ export const categoriesSub: CategoryType[] = [
       {
         title: 'Thương hiệu',
         items: [
-          { name: 'iPhone', href: '/dich-vu/iphone' },
-          { name: 'Samsung', href: '/dich-vu/samsung' },
-          { name: 'Oppo', href: '/dich-vu/oppo' },
-          { name: 'Xiaomi', href: '/dich-vu/xiaomi' },
-          { name: 'Vivo', href: '/dich-vu/vivo' },
-          { name: 'Realme', href: '/dich-vu/realme' },
-          { name: 'Huawei', href: '/dich-vu/huawei' },
-          { name: 'Khác', href: '/dich-vu/hang-khac' }
+          { name: 'iPhone', href: '/sua-chua/iphone' },
+          { name: 'Samsung', href: '/sua-chua/samsung' },
+          { name: 'Oppo', href: '/sua-chua/oppo' },
+          { name: 'Xiaomi', href: '/sua-chua/xiaomi' },
+          { name: 'Vivo', href: '/sua-chua/vivo' },
+          { name: 'Realme', href: '/sua-chua/realme' },
+          { name: 'Huawei', href: '/sua-chua/huawei' },
+          { name: 'Khác', href: '/sua-chua/hang-khac' }
         ]
       },
       {
         title: 'Thay màn hình điện thoại',
         items: [
-          { name: 'Thay màn hình iPhone', href: '/dich-vu/thay-man-hinh-iphone' },
-          { name: 'Thay màn hình Samsung', href: '/dich-vu/thay-man-hinh-samsung' },
-          { name: 'Thay màn hình Oppo', href: '/dich-vu/thay-man-hinh-oppo' },
-          { name: 'Thay màn hình Xiaomi', href: '/dich-vu/thay-man-hinh-xiaomi' },
-          { name: 'Thay màn hình Vivo', href: '/dich-vu/thay-man-hinh-vivo' },
-          { name: 'Thay màn hình Realme', href: '/dich-vu/thay-man-hinh-realme' },
-          { name: 'Thay màn hình Huawei', href: '/dich-vu/thay-man-hinh-huawei' },
-          { name: 'Thay màn hình Nokia', href: '/dich-vu/thay-man-hinh-nokia' }
+          { name: 'Thay màn hình iPhone', href: '/sua-chua/thay-man-hinh-iphone' },
+          { name: 'Thay màn hình Samsung', href: '/sua-chua/thay-man-hinh-samsung' },
+          { name: 'Thay màn hình Oppo', href: '/sua-chua/thay-man-hinh-oppo' },
+          { name: 'Thay màn hình Xiaomi', href: '/sua-chua/thay-man-hinh-xiaomi' },
+          { name: 'Thay màn hình Vivo', href: '/sua-chua/thay-man-hinh-vivo' },
+          { name: 'Thay màn hình Realme', href: '/sua-chua/thay-man-hinh-realme' },
+          { name: 'Thay màn hình Huawei', href: '/sua-chua/thay-man-hinh-huawei' },
+          { name: 'Thay màn hình Nokia', href: '/sua-chua/thay-man-hinh-nokia' }
         ]
       },
       {
         title: 'Thay mặt kính điện thoại',
         items: [
-          { name: 'Thay mặt kính iPhone', href: '/dich-vu/thay-mat-kinh-iphone' },
-          { name: 'Thay mặt kính Samsung', href: '/dich-vu/thay-mat-kinh-samsung' },
-          { name: 'Thay mặt kính Oppo', href: '/dich-vu/thay-mat-kinh-oppo' },
-          { name: 'Thay mặt kính Xiaomi', href: '/dich-vu/thay-mat-kinh-xiaomi' },
-          { name: 'Thay mặt kính Vivo', href: '/dich-vu/thay-mat-kinh-vivo' },
-          { name: 'Thay mặt kính Realme', href: '/dich-vu/thay-mat-kinh-realme' },
-          { name: 'Thay mặt kính Huawei', href: '/dich-vu/thay-mat-kinh-huawei' }
+          { name: 'Thay mặt kính iPhone', href: '/sua-chua/thay-mat-kinh-iphone' },
+          { name: 'Thay mặt kính Samsung', href: '/sua-chua/thay-mat-kinh-samsung' },
+          { name: 'Thay mặt kính Oppo', href: '/sua-chua/thay-mat-kinh-oppo' },
+          { name: 'Thay mặt kính Xiaomi', href: '/sua-chua/thay-mat-kinh-xiaomi' },
+          { name: 'Thay mặt kính Vivo', href: '/sua-chua/thay-mat-kinh-vivo' },
+          { name: 'Thay mặt kính Realme', href: '/sua-chua/thay-mat-kinh-realme' },
+          { name: 'Thay mặt kính Huawei', href: '/sua-chua/thay-mat-kinh-huawei' }
         ]
       },
       {
         title: 'Thay pin điện thoại',
         items: [
-          { name: 'Thay pin iPhone', href: '/dich-vu/thay-pin-iphone' },
-          { name: 'Thay pin Samsung', href: '/dich-vu/thay-pin-samsung' },
-          { name: 'Thay pin Oppo', href: '/dich-vu/thay-pin-oppo' },
-          { name: 'Thay pin Xiaomi', href: '/dich-vu/thay-pin-xiaomi' },
-          { name: 'Thay pin Vivo', href: '/dich-vu/thay-pin-vivo' },
-          { name: 'Thay pin Realme', href: '/dich-vu/thay-pin-realme' },
-          { name: 'Thay pin Huawei', href: '/dich-vu/thay-pin-huawei' },
-          { name: 'Thay pin Nokia', href: '/dich-vu/thay-pin-nokia' }
+          { name: 'Thay pin iPhone', href: '/sua-chua/thay-pin-iphone' },
+          { name: 'Thay pin Samsung', href: '/sua-chua/thay-pin-samsung' },
+          { name: 'Thay pin Oppo', href: '/sua-chua/thay-pin-oppo' },
+          { name: 'Thay pin Xiaomi', href: '/sua-chua/thay-pin-xiaomi' },
+          { name: 'Thay pin Vivo', href: '/sua-chua/thay-pin-vivo' },
+          { name: 'Thay pin Realme', href: '/sua-chua/thay-pin-realme' },
+          { name: 'Thay pin Huawei', href: '/sua-chua/thay-pin-huawei' },
+          { name: 'Thay pin Nokia', href: '/sua-chua/thay-pin-nokia' }
         ]
       },
       {
         title: 'Thay vỏ điện thoại',
         items: [
-          { name: 'Thay vỏ iPhone', href: '/dich-vu/thay-vo-iphone' },
-          { name: 'Thay vỏ Samsung', href: '/dich-vu/thay-vo-samsung' },
-          { name: 'Thay vỏ Oppo', href: '/dich-vu/thay-vo-oppo' },
-          { name: 'Thay vỏ Xiaomi', href: '/dich-vu/thay-vo-xiaomi' },
-          { name: 'Thay vỏ Vivo', href: '/dich-vu/thay-vo-vivo' },
-          { name: 'Thay vỏ Realme', href: '/dich-vu/thay-vo-realme' },
-          { name: 'Thay vỏ Huawei', href: '/dich-vu/thay-vo-huawei' },
-          { name: 'Thay vỏ Nokia', href: '/dich-vu/thay-vo-nokia' }
+          { name: 'Thay vỏ iPhone', href: '/sua-chua/thay-vo-iphone' },
+          { name: 'Thay vỏ Samsung', href: '/sua-chua/thay-vo-samsung' },
+          { name: 'Thay vỏ Oppo', href: '/sua-chua/thay-vo-oppo' },
+          { name: 'Thay vỏ Xiaomi', href: '/sua-chua/thay-vo-xiaomi' },
+          { name: 'Thay vỏ Vivo', href: '/sua-chua/thay-vo-vivo' },
+          { name: 'Thay vỏ Realme', href: '/sua-chua/thay-vo-realme' },
+          { name: 'Thay vỏ Huawei', href: '/sua-chua/thay-vo-huawei' },
+          { name: 'Thay vỏ Nokia', href: '/sua-chua/thay-vo-nokia' }
         ]
       }
     ]
@@ -177,20 +177,20 @@ export const categoriesSub: CategoryType[] = [
       {
         title: 'Thương hiệu',
         items: [
-          { name: 'MacBook', href: '/dich-vu/macbook' },
-          { name: 'Dell', href: '/dich-vu/dell' },
-          { name: 'HP', href: '/dich-vu/hp' },
-          { name: 'Lenovo', href: '/dich-vu/lenovo' },
-          { name: 'Asus', href: '/dich-vu/asus' }
+          { name: 'MacBook', href: '/sua-chua/macbook' },
+          { name: 'Dell', href: '/sua-chua/dell' },
+          { name: 'HP', href: '/sua-chua/hp' },
+          { name: 'Lenovo', href: '/sua-chua/lenovo' },
+          { name: 'Asus', href: '/sua-chua/asus' }
         ]
       },
       {
         title: 'Dịch vụ',
         items: [
-          { name: 'Thay màn hình laptop', href: '/dich-vu/thay-man-hinh-laptop' },
-          { name: 'Thay pin laptop', href: '/dich-vu/thay-pin-laptop' },
-          { name: 'Vệ sinh laptop', href: '/dich-vu/ve-sinh-laptop' },
-          { name: 'Sửa bàn phím laptop', href: '/dich-vu/sua-ban-phim-laptop' }
+          { name: 'Thay màn hình laptop', href: '/sua-chua/thay-man-hinh-laptop' },
+          { name: 'Thay pin laptop', href: '/sua-chua/thay-pin-laptop' },
+          { name: 'Vệ sinh laptop', href: '/sua-chua/ve-sinh-laptop' },
+          { name: 'Sửa bàn phím laptop', href: '/sua-chua/sua-ban-phim-laptop' }
         ]
       }
     ]
@@ -202,17 +202,17 @@ export const categoriesSub: CategoryType[] = [
       {
         title: 'Thương hiệu',
         items: [
-          { name: 'iPad', href: '/dich-vu/ipad' },
-          { name: 'Samsung Tab', href: '/dich-vu/samsung-tab' },
-          { name: 'Huawei Tab', href: '/dich-vu/huawei-tab' }
+          { name: 'iPad', href: '/sua-chua/ipad' },
+          { name: 'Samsung Tab', href: '/sua-chua/samsung-tab' },
+          { name: 'Huawei Tab', href: '/sua-chua/huawei-tab' }
         ]
       },
       {
         title: 'Dịch vụ',
         items: [
-          { name: 'Thay màn hình iPad', href: '/dich-vu/thay-man-hinh-ipad' },
-          { name: 'Thay pin iPad', href: '/dich-vu/thay-pin-ipad' },
-          { name: 'Thay màn hình Samsung Tab', href: '/dich-vu/thay-man-hinh-samsung-tab' }
+          { name: 'Thay màn hình iPad', href: '/sua-chua/thay-man-hinh-ipad' },
+          { name: 'Thay pin iPad', href: '/sua-chua/thay-pin-ipad' },
+          { name: 'Thay màn hình Samsung Tab', href: '/sua-chua/thay-man-hinh-samsung-tab' }
         ]
       }
     ]
@@ -224,19 +224,19 @@ export const categoriesSub: CategoryType[] = [
       {
         title: 'Dịch vụ',
         items: [
-          { name: 'Thay màn hình Apple Watch', href: '/dich-vu/thay-man-hinh-apple-watch' },
-          { name: 'Thay pin Apple Watch', href: '/dich-vu/thay-pin-apple-watch' },
-          { name: 'Thay vỏ Apple Watch', href: '/dich-vu/thay-vo-apple-watch' }
+          { name: 'Thay màn hình Apple Watch', href: '/sua-chua/thay-man-hinh-apple-watch' },
+          { name: 'Thay pin Apple Watch', href: '/sua-chua/thay-pin-apple-watch' },
+          { name: 'Thay vỏ Apple Watch', href: '/sua-chua/thay-vo-apple-watch' }
         ]
       },
       {
         title: 'Phiên bản',
         items: [
-          { name: 'Series 3', href: '/dich-vu/apple-watch-series-3' },
-          { name: 'Series 4', href: '/dich-vu/apple-watch-series-4' },
-          { name: 'Series 5', href: '/dich-vu/apple-watch-series-5' },
-          { name: 'Series 6', href: '/dich-vu/apple-watch-series-6' },
-          { name: 'Series 7', href: '/dich-vu/apple-watch-series-7' }
+          { name: 'Series 3', href: '/sua-chua/apple-watch-series-3' },
+          { name: 'Series 4', href: '/sua-chua/apple-watch-series-4' },
+          { name: 'Series 5', href: '/sua-chua/apple-watch-series-5' },
+          { name: 'Series 6', href: '/sua-chua/apple-watch-series-6' },
+          { name: 'Series 7', href: '/sua-chua/apple-watch-series-7' }
         ]
       }
     ]
@@ -248,19 +248,19 @@ export const categoriesSub: CategoryType[] = [
       {
         title: 'Dịch vụ',
         items: [
-          { name: 'Vệ sinh Airpods', href: '/dich-vu/ve-sinh-airpods' },
-          { name: 'Thay pin Airpods', href: '/dich-vu/thay-pin-airpods' },
-          { name: 'Sửa Airpods không kết nối', href: '/dich-vu/sua-airpods-khong-ket-noi' }
+          { name: 'Vệ sinh Airpods', href: '/sua-chua/ve-sinh-airpods' },
+          { name: 'Thay pin Airpods', href: '/sua-chua/thay-pin-airpods' },
+          { name: 'Sửa Airpods không kết nối', href: '/sua-chua/sua-airpods-khong-ket-noi' }
         ]
       },
       {
         title: 'Phiên bản',
         items: [
-          { name: 'Airpods 1', href: '/dich-vu/airpods-1' },
-          { name: 'Airpods 2', href: '/dich-vu/airpods-2' },
-          { name: 'Airpods Pro', href: '/dich-vu/airpods-pro' },
-          { name: 'Airpods 3', href: '/dich-vu/airpods-3' },
-          { name: 'Airpods Pro 2', href: '/dich-vu/airpods-pro-2' }
+          { name: 'Airpods 1', href: '/sua-chua/airpods-1' },
+          { name: 'Airpods 2', href: '/sua-chua/airpods-2' },
+          { name: 'Airpods Pro', href: '/sua-chua/airpods-pro' },
+          { name: 'Airpods 3', href: '/sua-chua/airpods-3' },
+          { name: 'Airpods Pro 2', href: '/sua-chua/airpods-pro-2' }
         ]
       }
     ]

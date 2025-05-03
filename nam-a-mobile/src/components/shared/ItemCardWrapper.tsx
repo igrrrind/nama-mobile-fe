@@ -11,7 +11,7 @@ interface ItemCardWrapperProps {
   sectionTitle?: string;
   gradientColor?: string;
   className?: string;
-  type?: "dich-vu" | "mua-sam"
+  type?: "sua-chua" | "mua-sam"
 }
 
 export default function ItemCardWrapper({
@@ -19,14 +19,14 @@ export default function ItemCardWrapper({
   sectionTitle,
   gradientColor,
   className = "",
-  type = "dich-vu"
+  type = "sua-chua"
 }: ItemCardWrapperProps) {
   // If no section title or gradient color, render basic product grid
   if (!sectionTitle && !gradientColor) {
     return (
-      <div className={`grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6 ${className}`}>
+      <div className={`grid grid-cols-2 @2xl:grid-cols-3 @4xl:grid-cols-4 @6xl:grid-cols-5 gap-2 @md:gap-3 ${className}`}>
         {items.map((item) => (
-          <ItemCard item={item} key={item.id} type="dich-vu" />
+          <ItemCard item={item} key={item.id} type={type} />
         ))}
       </div>
     );
@@ -45,14 +45,14 @@ export default function ItemCardWrapper({
     : undefined;
 
   return (
-    <section className="py-2">
-      <div className="container mx-auto px-4 py-4 sm:rounded-2xl" style={gradientStyle}>
+    <div className="py-2">
+      <div className="@container container mx-auto px-4 py-4 sm:rounded-2xl" style={gradientStyle}>
         {sectionTitle && (
           <div className="w-full flex justify-between items-center mb-2 md:mb-4">
             <h2 className="text-2xl md:text-3xl font-bold text-left">
               {sectionTitle}
             </h2>
-            <Button
+            {gradientColor && <Button
               className={cn(
                 "rounded-3xl font-bold w-40 border-none",
               )}
@@ -69,15 +69,15 @@ export default function ItemCardWrapper({
               }}
             >
               Xem tất cả <ArrowRight />
-            </Button>
+            </Button>}
           </div>
         )}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 md:gap-3">
+        <div className="grid grid-cols-2 @2xl:grid-cols-3 @4xl:grid-cols-4 @6xl:grid-cols-5 gap-2 @md:gap-3">
           {items.map((item) => (
             <ItemCard item={item} key={item.id} type={type} />
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 }

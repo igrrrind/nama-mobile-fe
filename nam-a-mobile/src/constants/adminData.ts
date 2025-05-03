@@ -2,6 +2,10 @@ import { ServiceRequest, Order, Service, Product, Component, Accessory, User, Ba
 import { ServiceStatus, OrderStatus, UserStatus, Role, CartStatus } from '@/types/enums';
 import { ComponentCategory } from "@/types/component-category.interface";
 import { AccessoryCategory } from "@/types/accessory-category.interface";
+import { Color } from "@/types/color.interface";
+import { Condition } from "@/types/condition.interface";
+import { Storage } from "@/types/storage.interface";
+import { Blog } from "@/types/blog.interface";
 
 export const serviceRequests: ServiceRequest[] = [
   {
@@ -62,7 +66,7 @@ export const services: Service[] = [
     name: 'Sửa chữa màn hình iPhone',
     slug: 'sua-chua-man-hinh-iphone',
     serviceName: 'Sửa chữa màn hình iPhone',
-    serviceModelPrices: [],
+    prices: [],
     image: 'service1.jpg',
     price: 2000000,
     rating: 4.5,
@@ -179,6 +183,24 @@ export const accessories: Accessory[] = [
   }
 ];
 
+export const colors: Color[] = [
+  { id: "COL001", name: "Đen", imageUrl: "" },
+  { id: "COL002", name: "Trắng", imageUrl: "" },
+  { id: "COL003", name: "Xanh", imageUrl: "" },
+];
+
+export const conditions: Condition[] = [
+  { id: "C001", name: "Như mới" },
+  { id: "C002", name: "Tốt" },
+  { id: "C003", name: "Khá" },
+];
+
+export const storages: Storage[] = [
+  { id: "S001", name: "64GB" },
+  { id: "S002", name: "128GB" },
+  { id: "S003", name: "256GB" },
+];
+
 export const users: User[] = [
   {
     id: 'U001',
@@ -201,5 +223,34 @@ export const banners: Banner[] = [
     name: 'Khuyến mãi tháng 4',
     imageUrl: 'banner1.jpg',
     redirectUrl: '/promotions'
+  }
+];
+
+export const blogs: Blog[] = [
+  {
+    id: "1",
+    authorId: "u1",
+    author: "Nguyen Van A",
+    title: "Hướng dẫn sử dụng điện thoại hiệu quả",
+    content: "<p>Đây là nội dung bài viết mẫu về hướng dẫn sử dụng điện thoại hiệu quả.</p>",
+    imageUrl: "https://via.placeholder.com/300x200",
+    createdAt: "2024-05-01",
+    isActive: true,
+    slug: "huong-dan-su-dung-dien-thoai",
+    relatedPosts: [
+      { title: "Mẹo tiết kiệm pin", slug: "meo-tiet-kiem-pin" }
+    ]
+  },
+  {
+    id: "2",
+    authorId: "u2",
+    author: "Tran Thi B",
+    title: "Bảo quản phụ kiện đúng cách",
+    content: "<p>Đây là nội dung bài viết mẫu về bảo quản phụ kiện.</p>",
+    imageUrl: "https://via.placeholder.com/300x200",
+    createdAt: "2024-05-02",
+    isActive: false,
+    slug: "bao-quan-phu-kien",
+    relatedPosts: []
   }
 ];

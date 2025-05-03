@@ -28,7 +28,7 @@ export default async function SparePartsPage() {
           <div className="flex-1">
             <ComponentTable data={data}>
               <div className="flex gap-2">
-                <Button className="flex items-center gap-2 bg-primary text-white">
+                <Button variant={"secondary"} className="flex outline items-center gap-2">
                   <FolderPlus className="w-5 h-5" />
                   Thêm phân loại
                 </Button>
@@ -38,7 +38,7 @@ export default async function SparePartsPage() {
                   description="Điền đầy đủ thông tin để đăng bán linh kiện"
                   title="Thêm linh kiện mới"
                 >
-                  <Button className="flex items-center gap-2 bg-primary text-white">
+                  <Button className="flex items-center gap-2 bg-gradient-to-r from-primary to-primary/80 text-white">
                     <PlusCircle className="w-5 h-5" />
                     Thêm linh kiện mới
                   </Button>

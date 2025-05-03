@@ -8,5 +8,8 @@ export const productService = {
   },
   getProduct: async (slug: string) => {
       return getRequest<Product>(PRODUCT_API.GET_SLUG(slug))
-  }
+  },
+  getProductsByBrandandModelSlugs: async (brandSlug: string, modelSlug?: string, paginate?: PageReq) => {
+    return getRequest<PageinationResult<Product>>(PRODUCT_API.GET_BY_BRAND_ANDOR_MODEL(brandSlug, modelSlug, paginate));
+},
 }; 

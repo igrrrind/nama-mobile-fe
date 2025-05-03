@@ -19,7 +19,7 @@ interface SelectProps {
   value?: string;
   onChange?: (value: string) => void;
   placeholder?: string;
-  options: SelectOption[];
+  options?: SelectOption[];
   disabled?: boolean;
   className?: string;
 }
@@ -28,32 +28,37 @@ export function CustomSelect({
   value,
   onChange,
   placeholder = "Chọn một giá trị...",
-  options,
+  options = [],
   disabled = false,
   className,
 }: SelectProps) {
+  const hasOptions = Array.isArray(options) && options.length > 0;
+  const isDisabled = disabled || !hasOptions;
+
   return (
     <ShadcnSelect
       onValueChange={onChange}
       value={value || ""}
-      disabled={disabled}
+      disabled={isDisabled}
     >
       <SelectTrigger
         className={cn(
           "w-full shadow-sm",
-          disabled && "opacity-50 cursor-not-allowed",
+          isDisabled && "opacity-50 cursor-not-allowed",
           className
         )}
       >
-        <SelectValue placeholder={placeholder} />
+        <SelectValue placeholder={hasOptions ? placeholder : "Không có tùy chọn"} />
       </SelectTrigger>
-      <SelectContent>
-        {options.map((option) => (
-          <SelectItem key={option.value} value={option.value}>
-            {option.label}
-          </SelectItem>
-        ))}
-      </SelectContent>
+      {hasOptions && (
+        <SelectContent>
+          {options.map((option) => (
+            <SelectItem key={option.value} value={option.value}>
+              {option.label}
+            </SelectItem>
+          ))}
+        </SelectContent>
+      )}
     </ShadcnSelect>
   );
 }

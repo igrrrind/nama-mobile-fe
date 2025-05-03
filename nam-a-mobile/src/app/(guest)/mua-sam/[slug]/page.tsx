@@ -168,7 +168,7 @@ export default function ProductDetailPage({
   ];
 
   return (
-    <div className="mx-auto px-4 pt-4 pb-20 bg-gradient-to-br from-primary/10 to-primary/5">
+    <div className="mx-auto px-4 pt-6 pb-20 bg-gradient-to-br from-primary/10 to-primary/5">
       <div className="container mx-auto max-w-7xl">
         <Breadcrumb items={breadcrumbItems} />
         <ModelDetailClient model={model} />

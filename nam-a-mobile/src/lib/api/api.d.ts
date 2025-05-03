@@ -17,3 +17,8 @@ interface Paginate{
     currentPage: number;
     pageSize: number;
 }
+
+interface PageReq {
+    page: number;
+    pageSize: number;
+}

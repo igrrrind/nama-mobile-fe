@@ -5,6 +5,7 @@ import { Button } from '../ui/button';
 interface HtmlContentProps {
   content: string;
   className?: string;
+  isBlog?: boolean;
 }
 
 export const HtmlContent = ({ content, className = '' }: HtmlContentProps) => {

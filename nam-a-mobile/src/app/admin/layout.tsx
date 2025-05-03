@@ -8,7 +8,7 @@ import { Raleway, Mulish } from "next/font/google"; // re-import fonts
 const raleway = Raleway({
   variable: "--font-raleway",
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["400","500", "700"],
 });
 
 const mulish = Mulish({

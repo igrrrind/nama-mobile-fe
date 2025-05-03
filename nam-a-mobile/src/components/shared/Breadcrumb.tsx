@@ -37,22 +37,22 @@ export const Breadcrumb = ({ items }: BreadcrumbProps) => {
                 {absoluteIndex === 0 && (
                   <Link
                     href="/"
-                    className="hover:text-primary transition-colors text-ellipsis whitespace-nowrap mr-2"
+                    className="hover:text-primary-dark text-primary font-bold transition-colors text-ellipsis whitespace-nowrap mr-2"
                   >
-                    Trang chủ
+                    TRANG CHỦ
                   </Link>
                 )}
                 <ChevronRight className="w-4 h-4 shrink-0" />
                 {item.href ? (
                   <Link
                     href={item.href}
-                    className="hover:text-primary transition-colors truncate mr-2"
+                    className="hover:text-primary-dark text-primary font-bold transition-colors truncate mr-2"
                   >
-                    {item.label}
+                    {item.label.toUpperCase()}
                   </Link>
                 ) : (
-                  <span className="text-gray-900 truncate mr-2">
-                    {item.label}
+                  <span className="text-gray-900 font-bold truncate mr-2">
+                    {item.label.toUpperCase()}
                   </span>
                 )}
               </div>

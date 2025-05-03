@@ -384,7 +384,7 @@ export function RTFEditor({
       {/* Editor Content */}
       <div 
         ref={editorContainerRef}
-        className="overflow-auto h-[350px] max-h-[350px] p-3 cursor-text" 
+        className="overflow-auto h-full max-h-[400px] p-3 cursor-text" 
         onClick={handleContentClick}
       >
         <EditorContent editor={editor} className="prose prose-sm custom-editor-content w-full max-w-none" />
